@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d0d0d;--surface:#161616;--surface2:#1e1e1e;--surface3:#252525;
+  --border:#2a2a2a;--border2:#333;
+  --txt:#f0ede8;--txt2:#9a9690;--txt3:#5a5650;
+  --accent:#e8d5a3;--accent2:#c4a96b;--accent3:#8a6f3a;
+  --green:#4ade80;--red:#f87171;--blue:#60a5fa;--orange:#fb923c;
+  --rad:10px;
+}
+body{font-family:'Syne',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;padding:20px 16px;overflow-x:hidden}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:28px}
+.header h1{font-size:clamp(22px,4vw,32px);font-weight:800;letter-spacing:-0.5px;color:var(--txt)}
+.header h1 span{color:var(--accent)}
+.subtitle{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt3);margin-top:6px;letter-spacing:1px}
+
+/* STATS BAR */
+.stats-bar{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.stat{flex:1;min-width:80px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rad);padding:10px 14px;text-align:center}
+.stat-num{font-size:22px;font-weight:700;line-height:1}
+.stat-label{font-size:11px;color:var(--txt3);margin-top:3px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
+.stat.correct .stat-num{color:var(--green)}
+.stat.wrong .stat-num{color:var(--red)}
+.stat.streak .stat-num{color:var(--accent)}
+.stat.total .stat-num{color:var(--blue)}
+
+/* PROGRESS */
+.progress-wrap{background:var(--surface);border-radius:4px;height:4px;margin-bottom:24px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent));border-radius:4px;transition:width .4s ease}
+
+/* SECTION TABS */
+.tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
+.tab{font-family:'JetBrains Mono',monospace;font-size:11px;padding:6px 12px;border-radius:6px;border:1px solid var(--border2);background:var(--surface);color:var(--txt2);cursor:pointer;transition:.2s;letter-spacing:.3px}
+.tab:hover{border-color:var(--accent3);color:var(--accent)}
+.tab.active{background:var(--accent3);border-color:var(--accent);color:var(--bg);font-weight:600}
+
+/* CARD */
+.card-wrap{perspective:1200px;margin-bottom:20px}
+.card{position:relative;width:100%;min-height:220px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1);cursor:pointer}
+.card.flipped{transform:rotateY(180deg)}
+.card-face{position:absolute;width:100%;min-height:220px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between}
+.card-front{background:var(--surface);border:1px solid var(--border2)}
+.card-back{background:var(--surface2);border:1px solid var(--accent3);transform:rotateY(180deg)}
+.card-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt3);letter-spacing:1px;margin-bottom:12px}
+.card-q{font-size:clamp(15px,3vw,18px);font-weight:600;color:var(--txt);line-height:1.5;flex:1;display:flex;align-items:center}
+.card-hint{font-size:11px;color:var(--txt3);font-family:'JetBrains Mono',monospace;text-align:center}
+.card-a{font-size:clamp(13px,2.5vw,15px);color:var(--txt);line-height:1.65;flex:1;overflow-y:auto;padding-right:4px}
+.card-a code{font-family:'JetBrains Mono',monospace;background:var(--surface3);color:var(--accent);padding:1px 5px;border-radius:4px;font-size:.9em}
+.card-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent2);font-weight:500}
+
+/* ACTIONS */
+.actions{display:flex;gap:10px;margin-bottom:20px}
+.btn{flex:1;padding:13px 10px;border-radius:var(--rad);border:1px solid;font-family:'Syne',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;letter-spacing:.3px}
+.btn-correct{background:transparent;border-color:#166534;color:var(--green)}
+.btn-correct:hover{background:#166534;color:#fff}
+.btn-wrong{background:transparent;border-color:#7f1d1d;color:var(--red)}
+.btn-wrong:hover{background:#7f1d1d;color:#fff}
+.btn-skip{background:transparent;border-color:var(--border2);color:var(--txt2)}
+.btn-skip:hover{background:var(--surface2);color:var(--txt)}
+.actions-pre{display:flex;gap:10px;margin-bottom:12px}
+.btn-flip{flex:1;background:var(--accent3);border:none;color:var(--bg);font-family:'Syne',sans-serif;font-size:14px;font-weight:700;padding:13px;border-radius:var(--rad);cursor:pointer;letter-spacing:.5px;transition:.2s}
+.btn-flip:hover{background:var(--accent2)}
+
+/* CONTROLS */
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.ctrl-btn{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 14px;border-radius:6px;border:1px solid var(--border2);background:var(--surface);color:var(--txt2);cursor:pointer;transition:.2s}
+.ctrl-btn:hover{border-color:var(--accent3);color:var(--accent)}
+.ctrl-btn.danger{border-color:#7f1d1d;color:var(--red)}
+.ctrl-btn.danger:hover{background:#7f1d1d;color:#fff}
+
+/* FINISH */
+.finish{display:none;text-align:center;background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:36px 24px}
+.finish.show{display:block}
+.finish-score{font-size:52px;font-weight:800;color:var(--accent);line-height:1}
+.finish-pct{font-size:16px;color:var(--txt2);margin:8px 0 20px}
+.finish h2{font-size:22px;font-weight:700;margin-bottom:8px}
+.finish-btn{display:inline-block;margin-top:16px;padding:12px 28px;border-radius:var(--rad);background:var(--accent3);border:none;color:var(--bg);font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:.2s}
+.finish-btn:hover{background:var(--accent2)}
+.mode-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 8px;border-radius:20px;border:1px solid var(--border2);color:var(--txt3);margin-left:8px;vertical-align:middle}
+.mode-badge.active{border-color:var(--accent3);color:var(--accent2);background:rgba(138,111,58,.15)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>PHP <span>&amp; MySQL</span> Kartičky</h1>
+  <div class="subtitle">// FLASHCARD LEARNING SYSTEM — 43 otázok</div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat correct"><div class="stat-num" id="s-correct">0</div><div class="stat-label">správne</div></div>
+  <div class="stat wrong"><div class="stat-num" id="s-wrong">0</div><div class="stat-label">chybné</div></div>
+  <div class="stat streak"><div class="stat-num" id="s-streak">0</div><div class="stat-label">séria</div></div>
+  <div class="stat total"><div class="stat-num" id="s-remain">43</div><div class="stat-label">zostatok</div></div>
+</div>
+
+<div class="progress-wrap"><div class="progress-bar" id="progress" style="width:0%"></div></div>
+
+<div class="tabs" id="tabs">
+  <div class="tab active" data-section="all">Všetko</div>
+  <div class="tab" data-section="0">Formuláre</div>
+  <div class="tab" data-section="1">Session/Cookies</div>
+  <div class="tab" data-section="2">PHP + MySQL</div>
+  <div class="tab" data-section="3">Bezpečnosť</div>
+</div>
+
+<div class="controls">
+  <button class="ctrl-btn" id="btn-shuffle">⇄ Zamiešať</button>
+  <button class="ctrl-btn" id="btn-wrong-only">✗ Len chybné</button>
+  <button class="ctrl-btn danger" id="btn-reset">↺ Reset</button>
+  <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt3);align-self:center" id="mode-label">Normálny režim</span>
+</div>
+
+<div class="card-wrap" id="card-wrap">
+  <div class="card" id="card" onclick="flipCard()">
+    <div class="card-face card-front">
+      <div>
+        <div class="card-tag" id="card-tag">OTÁZKA 1</div>
+        <div class="card-q" id="card-q">Načítavam...</div>
+      </div>
+      <div class="card-hint">— klikni pre odpoveď —</div>
+    </div>
+    <div class="card-face card-back">
+      <div>
+        <div class="card-tag" id="card-tag-back">ODPOVEĎ</div>
+        <div class="card-a" id="card-a"></div>
+      </div>
+      <div class="card-num" id="card-num"></div>
+    </div>
+  </div>
+</div>
+
+<div class="actions-pre">
+  <button class="btn-flip" onclick="flipCard()">↩ Otočiť kartičku</button>
+</div>
+
+<div class="actions" id="actions" style="display:none">
+  <button class="btn btn-correct" onclick="rate(true)">✓ Vedel/a som</button>
+  <button class="btn btn-skip" onclick="rate(null)">→ Preskočiť</button>
+  <button class="btn btn-wrong" onclick="rate(false)">✗ Nevedel/a</button>
+</div>
+
+<div class="finish" id="finish">
+  <div class="finish-score" id="f-score">0/43</div>
+  <div class="finish-pct" id="f-pct">0% správnych</div>
+  <h2 id="f-msg">Výsledok</h2>
+  <p style="color:var(--txt2);font-size:14px" id="f-sub"></p>
+  <button class="finish-btn" onclick="restart()">↺ Znovu od začiatku</button>
+</div>
+
+<script>
+const ALL_QUESTIONS = [
+  // SECTION 0: Formuláre (otázky 1–14)
+  {s:0,q:"Na čo slúžia HTML formuláre vo webových aplikáciách?",a:"Slúžia na <code>zber vstupných dát</code> od používateľa a ich odoslanie na server na spracovanie (prihlasovanie, registrácia, vyhľadávanie, objednávky…)."},
+  {s:0,q:"Aký význam majú atribúty <code>action</code> a <code>method</code> vo formulári?",a:"<code>action</code> určuje URL adresu skriptu, ktorému sa formulár odošle. <code>method</code> určuje HTTP metódu — GET alebo POST."},
+  {s:0,q:"Aké základné typy vstupných polí môže obsahovať HTML formulár?",a:"<code>&lt;input&gt;</code> (text, password, email, number, checkbox, radio, submit…), <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;/&lt;option&gt;</code>, <code>&lt;button&gt;</code>."},
+  {s:0,q:"Prečo musí mať vstupné pole atribút <code>name</code>?",a:"Je to kľúč, pod ktorým PHP prijme hodnotu v <code>$_GET</code> alebo <code>$_POST</code>. Bez <code>name</code> sa pole pri odoslaní ignoruje."},
+  {s:0,q:"Aký je rozdiel medzi metódou GET a POST pri odosielaní formulára?",a:"<code>GET</code> pridáva dáta do URL (<code>?meno=Jan</code>). <code>POST</code> ich posiela v tele HTTP požiadavky — nie sú viditeľné v URL."},
+  {s:0,q:"Aké sú výhody a nevýhody metódy GET?",a:"✓ Záložkovateľná URL, vhodné na vyhľadávanie, dáta viditeľné na ladenie.<br>✗ Dáta viditeľné v URL, obmedzená dĺžka, nevhodné pre heslá."},
+  {s:0,q:"Aké sú výhody a nevýhody metódy POST?",a:"✓ Dáta nie sú v URL, vhodné pre citlivé údaje a súbory, bez obmedzenia dĺžky.<br>✗ URL sa nedá záložkovať, nie je vhodné na čisté vyhľadávanie."},
+  {s:0,q:"Na čo slúžia superglobálne premenné <code>$_GET</code>, <code>$_POST</code> a <code>$_REQUEST</code>?",a:"<code>$_GET</code>/<code>$_POST</code> obsahujú dáta z formulárov odoslaných danou metódou. <code>$_REQUEST</code> obsahuje dáta z oboch naraz — menej bezpečné, preto sa odporúča nepoužívať ho."},
+  {s:0,q:"Na čo sa používa <code>$_SERVER</code> a čo znamená <code>$_SERVER['REQUEST_METHOD']</code>?",a:"<code>$_SERVER</code> obsahuje informácie o serverovom prostredí a HTTP požiadavke. <code>$_SERVER['REQUEST_METHOD']</code> vracia <code>'GET'</code> alebo <code>'POST'</code>."},
+  {s:0,q:"Čo je rozdiel medzi <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code> a <code>&lt;select&gt;</code>?",a:"<code>input</code> = jednoriadkové pole (alebo checkbox/radio). <code>textarea</code> = viacriadkové textové pole. <code>select</code> = rozbaľovací zoznam možností."},
+  {s:0,q:"Aké HTML5 atribúty umožňujú klientskú validáciu formulárov?",a:"<code>required</code>, <code>type</code> (email, number…), <code>min</code>, <code>max</code>, <code>maxlength</code>, <code>pattern</code>. Sú rýchle, ale dajú sa obísť — nestačia samé osebe."},
+  {s:0,q:"Aké základy serverovej validácie a sanitizácie treba robiť v PHP?",a:"Kontrola prázdnosti (<code>empty</code>, <code>trim</code>), typová kontrola (<code>is_numeric</code>), formátová validácia (<code>filter_var</code> + <code>FILTER_VALIDATE_EMAIL</code>), sanitizácia výstupu (<code>htmlspecialchars</code>)."},
+  {s:0,q:"Ako funguje odoslanie formulára do PHP skriptu a ako sa čítajú dáta?",a:"Formulár sa odošle na URL v <code>action</code>. PHP číta dáta cez <code>$_POST['name']</code> alebo <code>$_GET['name']</code>, kde <code>name</code> zodpovedá atribútu name vstupného poľa."},
+  {s:0,q:"Ako sa odlíši, či bol formulár odoslaný?",a:"Dvoma spôsobmi: <code>$_SERVER['REQUEST_METHOD'] === 'POST'</code> — vždy spoľahlivé. Alebo <code>isset($_POST['nazov_tlacidla'])</code> — funguje pri konkrétnom tlačidle."},
+
+  // SECTION 1: Session + Cookies (otázky 15–24)
+  {s:1,q:"Na čo slúži session v PHP a kedy sa najčastejšie používa?",a:"Session uchováva dáta používateľa na serveri počas celej návštevy. Najčastejšie: autentifikácia (prihlásenie), nákupný košík, uchovanie stavu medzi požiadavkami."},
+  {s:1,q:"Aký príkaz je potrebné použiť pred prácou so session a prečo?",a:"<code>session_start()</code> — musí byť volaný pred akýmkoľvek HTML výstupom. Inicializuje alebo obnoví session a nastaví cookie so session ID."},
+  {s:1,q:"Ako sa ukladajú a čítajú dáta zo <code>$_SESSION</code>?",a:"Uloženie: <code>$_SESSION['klic'] = 'hodnota';</code><br>Čítanie: <code>$hodnota = $_SESSION['klic'];</code>"},
+  {s:1,q:"Akým spôsobom sa dá session ukončiť a používateľ odhlásiť?",a:"<code>$_SESSION = [];</code> (vymazanie premenných) + <code>session_destroy();</code> + prípadne <code>setcookie(session_name(), '', time()-3600, '/')</code> pre vymazanie cookie."},
+  {s:1,q:"Čo sú cookies a na čo sa používajú vo webových aplikáciách?",a:"Cookies sú malé textové súbory uložené v prehliadači. Slúžia na zapamätanie preferencií, prihlásenia (token), sledovanie návštev, výber jazyka/témy."},
+  {s:1,q:"Ako sa v PHP vytvára cookie a ako sa číta jej hodnota?",a:"Vytvorenie: <code>setcookie('klic', 'hodnota', time()+86400, '/');</code><br>Čítanie: <code>$_COOKIE['klic']</code>"},
+  {s:1,q:"Aký je hlavný rozdiel medzi session a cookies z hľadiska uloženia údajov?",a:"Session ukladá dáta na <code>serveri</code> — v prehliadači je len session ID. Cookies ukladajú dáta priamo <code>v prehliadači</code> používateľa."},
+  {s:1,q:"Ako sa nastavuje doba platnosti cookie a čo znamená vypršanie?",a:"Tretí parameter <code>setcookie()</code> je Unix timestamp expirácie, napr. <code>time() + 86400</code> = 1 deň. Po uplynutí prehliadač cookie automaticky vymaže."},
+  {s:1,q:"Čo sa stane, ak používateľ zakáže cookies, a ako to ovplyvní session?",a:"Ak sú cookies zakázané, session cookie sa neuloží a session nebude fungovať medzi požiadavkami. Riešenie: session ID v URL, no to je bezpečnostné riziko."},
+  {s:1,q:"Kedy je vhodné použiť session a kedy cookies?",a:"<strong>Session</strong>: prihlasovacie údaje, košík — dáta, ktoré nesmú byť viditeľné klientovi.<br><strong>Cookies</strong>: dlhodobé preferencie (téma, jazyk, zapamätané meno) — dáta, ktoré môžu byť v prehliadači."},
+
+  // SECTION 2: PHP + MySQL (otázky 25–38)
+  {s:2,q:"Ako sa v PHP vytvára spojenie s databázou MySQL?",a:"MySQLi: <code>$conn = new mysqli('localhost', 'user', 'pass', 'db');</code><br>PDO: <code>$pdo = new PDO('mysql:host=localhost;dbname=db', 'user', 'pass');</code>"},
+  {s:2,q:"Akým spôsobom môže PHP vykonávať SQL príkazy v databáze?",a:"<code>$conn->query($sql)</code> pre jednoduché dotazy. Pre bezpečné dotazy: <code>$stmt = $conn->prepare($sql); $stmt->bind_param(...); $stmt->execute();</code>"},
+  {s:2,q:"Ako sa spracúvajú výsledky SQL dotazu SELECT?",a:"<code>$result = $conn->query('SELECT ...');</code><br>Potom: <code>while ($row = $result->fetch_assoc()) { echo $row['stlpec']; }</code>"},
+  {s:2,q:"Na čo slúži SQL príkaz SELECT a kedy sa používa?",a:"<code>SELECT</code> slúži na čítanie a výber dát z tabuľky. Používa sa vždy, keď chceme zobraziť záznamy — zoznam produktov, profil používateľa atď."},
+  {s:2,q:"Ako sa pomocou SELECT dajú získať iba konkrétne stĺpce?",a:"<code>SELECT meno, email FROM pouzivatelia</code> — namiesto <code>*</code> napíšeme konkrétne stĺpce oddelené čiarkou."},
+  {s:2,q:"Na čo slúži podmienka WHERE pri SQL príkazoch?",a:"<code>WHERE</code> filtruje riadky podľa podmienky, napr. <code>WHERE vek > 18</code>. Bez neho by sa príkaz vykonával na všetkých riadkoch tabuľky."},
+  {s:2,q:"Na čo slúži SQL príkaz INSERT a čo je potrebné zadať?",a:"<code>INSERT INTO tabulka (stlpec1, stlpec2) VALUES ('hodnota1', 'hodnota2');</code> — vkladáme nový riadok. Potrebujeme názvy stĺpcov a zodpovedajúce hodnoty."},
+  {s:2,q:"Na čo slúži SQL príkaz UPDATE a prečo je dôležité WHERE?",a:"<code>UPDATE tabulka SET stlpec='nova' WHERE id=5;</code> — aktualizuje existujúci záznam. Bez <code>WHERE</code> by sa zmenili všetky riadky tabuľky!"},
+  {s:2,q:"Na čo slúži SQL príkaz DELETE a aké riziko vzniká bez WHERE?",a:"<code>DELETE FROM tabulka WHERE id=5;</code> — vymaže riadok. Bez <code>WHERE</code> sa vymažú <strong>všetky riadky</strong> tabuľky — dáta sú nenávratne preč."},
+  {s:2,q:"Čo je SQL injection a ako sa proti nemu brániť?",a:"Útok, kde útočník vloží vlastný SQL kód do vstupu. Obrana: <code>prepared statements</code> — nikdy nekonkatenujeme používateľský vstup priamo do SQL reťazca."},
+  {s:2,q:"Aký je rozdiel medzi <code>SELECT *</code> a výberom konkrétnych stĺpcov?",a:"<code>SELECT *</code> vráti všetky stĺpce — jednoduché, ale pomalšie a menej prehľadné. Výber konkrétnych stĺpcov je rýchlejší, bezpečnejší a jasnejší."},
+  {s:2,q:"Ako sa v PHP ošetruje chyba pri práci s databázou?",a:"MySQLi: <code>if ($conn->connect_error) { die('Chyba: ' . $conn->connect_error); }</code><br>PDO: pomocou <code>try/catch</code> s <code>PDOException</code>."},
+  {s:2,q:"Ako funguje triedenie výsledkov pomocou ORDER BY?",a:"<code>ORDER BY stlpec ASC</code> = vzostupne, <code>DESC</code> = zostupne. Napr. <code>ORDER BY datum DESC</code> zoradí záznamy od najnovšieho."},
+  {s:2,q:"Na čo slúži LIMIT v SQL a kedy sa používa?",a:"<code>LIMIT n</code> obmedzí počet vrátených riadkov, napr. <code>LIMIT 10</code>. Používa sa pri stránkovaní alebo keď nás zaujímajú len prvé záznamy."},
+
+  // SECTION 3: Bezpečnosť (otázky 39–43)
+  {s:3,q:"Prečo sa heslá nemajú ukladať do databázy v čitateľnej podobe?",a:"Keby útočník získal prístup k databáze, okamžite by videl heslá všetkých používateľov. Hash útočník nemôže priamo použiť."},
+  {s:3,q:"Čo znamená hashovanie hesla a aký je rozdiel medzi hashovaním a šifrovaním?",a:"Hashovanie = <strong>jednosmerná</strong> transformácia (z hashu nie je možné spätne získať heslo). Šifrovanie je obojsmerné — dá sa dešifrovať kľúčom. Na heslá vždy hashujeme."},
+  {s:3,q:"Na čo slúži funkcia <code>password_hash()</code> a kedy sa volá?",a:"<code>password_hash($heslo, PASSWORD_BCRYPT)</code> vygeneruje bezpečný hash vrátane soli. Volá sa pri <strong>registrácii</strong> pred uložením do DB."},
+  {s:3,q:"Na čo slúži <code>password_verify()</code> a ako sa využíva pri prihlasovaní?",a:"<code>password_verify($zadane_heslo, $hash_z_db)</code> porovná zadané heslo s hashom. Vracia <code>true</code>/<code>false</code>. Volá sa pri <strong>prihlasovaní</strong>."},
+  {s:3,q:"Ako sa správne odhlasuje používateľ a prečo je dôležité zrušiť session?",a:"<code>$_SESSION = [];</code> → <code>session_destroy();</code> → vymazanie session cookie. Dôležité: bez zrušenia session by niekto so starým session ID mohol pokračovať v relácii."},
+];
+
+const SECTION_NAMES = ['Formuláre (1–14)', 'Session & Cookies (15–24)', 'PHP + MySQL (25–38)', 'Bezpečnosť (39–43)'];
+
+let deck = [], idx = 0, flipped = false;
+let correct = 0, wrong = 0, streak = 0, maxStreak = 0;
+let wrongOnly = false, activeSection = 'all';
+
+function buildDeck(section) {
+  let qs = section === 'all' ? [...ALL_QUESTIONS] : ALL_QUESTIONS.filter(q => q.s === parseInt(section));
+  return qs;
+}
+
+function shuffle(arr) {
+  for (let i = arr.length-1; i>0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+  }
+  return arr;
+}
+
+function init(section, shuffleIt) {
+  deck = buildDeck(section);
+  if (shuffleIt) shuffle(deck);
+  idx = 0; correct = 0; wrong = 0; streak = 0; wrongOnly = false;
+  document.getElementById('btn-wrong-only').style.color = '';
+  document.getElementById('btn-wrong-only').style.borderColor = '';
+  showCard();
+  updateStats();
+  document.getElementById('finish').classList.remove('show');
+  document.getElementById('card-wrap').style.display = '';
+  document.getElementById('actions-pre').style.display = '';
+}
+
+function showCard() {
+  if (idx >= deck.length) { showFinish(); return; }
+  const q = deck[idx];
+  flipped = false;
+  const card = document.getElementById('card');
+  card.classList.remove('flipped');
+  document.getElementById('card-tag').textContent = 'OTÁZKA ' + (idx+1) + ' / ' + deck.length;
+  document.getElementById('card-tag-back').textContent = SECTION_NAMES[q.s];
+  document.getElementById('card-q').innerHTML = q.q;
+  document.getElementById('card-a').innerHTML = q.a;
+  document.getElementById('card-num').textContent = '#' + (ALL_QUESTIONS.indexOf(q)+1) + ' — ' + SECTION_NAMES[q.s];
+  document.getElementById('actions').style.display = 'none';
+  const pct = (idx / deck.length) * 100;
+  document.getElementById('progress').style.width = pct + '%';
+}
+
+function flipCard() {
+  flipped = !flipped;
+  document.getElementById('card').classList.toggle('flipped', flipped);
+  document.getElementById('actions').style.display = flipped ? 'flex' : 'none';
+}
+
+function rate(result) {
+  if (result === true) {
+    correct++; streak++;
+    maxStreak = Math.max(maxStreak, streak);
+    deck[idx]._correct = true;
+  } else if (result === false) {
+    wrong++; streak = 0;
+    deck[idx]._correct = false;
+  } else {
+    streak = 0;
+  }
+  idx++;
+  updateStats();
+  showCard();
+}
+
+function updateStats() {
+  document.getElementById('s-correct').textContent = correct;
+  document.getElementById('s-wrong').textContent = wrong;
+  document.getElementById('s-streak').textContent = streak;
+  const remain = Math.max(0, deck.length - idx);
+  document.getElementById('s-remain').textContent = remain;
+}
+
+function showFinish() {
+  document.getElementById('card-wrap').style.display = 'none';
+  document.getElementById('actions-pre').style.display = 'none';
+  document.getElementById('actions').style.display = 'none';
+  document.getElementById('progress').style.width = '100%';
+  const total = correct + wrong;
+  const pct = total > 0 ? Math.round(correct / total * 100) : 0;
+  document.getElementById('f-score').textContent = correct + '/' + total;
+  document.getElementById('f-pct').textContent = pct + '% správnych';
+  const msgs = [
+    [90, '🏆 Výborne! Látku ovládaš skvele.', 'Môžeš skúsiť len chybné otázky.'],
+    [70, '👍 Dobrý výkon!', 'Zopakuj si chybné otázky.'],
+    [50, '📚 Ešte sa treba učiť.', 'Skús zamiešať a zopakovať.'],
+    [0, '💪 Nevzdávaj sa!', 'Prečítaj si odpovede znovu a skús opäť.']
+  ];
+  const [, h2, sub] = msgs.find(([min]) => pct >= min);
+  document.getElementById('f-msg').textContent = h2;
+  document.getElementById('f-sub').textContent = sub + (maxStreak > 2 ? ' Najdlhšia séria: ' + maxStreak + '.' : '');
+  document.getElementById('finish').classList.add('show');
+}
+
+function restart() {
+  init(activeSection, true);
+}
+
+document.getElementById('btn-shuffle').onclick = () => {
+  shuffle(deck);
+  idx = 0; correct = 0; wrong = 0; streak = 0;
+  updateStats();
+  showCard();
+  document.getElementById('finish').classList.remove('show');
+  document.getElementById('card-wrap').style.display = '';
+  document.getElementById('actions-pre').style.display = '';
+};
+
+document.getElementById('btn-wrong-only').onclick = () => {
+  const wrongOnes = deck.filter(q => q._correct === false);
+  if (!wrongOnes.length) {
+    document.getElementById('btn-wrong-only').textContent = '✗ Žiadne chybné!';
+    setTimeout(() => { document.getElementById('btn-wrong-only').textContent = '✗ Len chybné'; }, 1500);
+    return;
+  }
+  deck = shuffle([...wrongOnes]);
+  idx = 0; correct = 0; wrong = 0; streak = 0; wrongOnly = true;
+  updateStats();
+  showCard();
+  document.getElementById('finish').classList.remove('show');
+  document.getElementById('card-wrap').style.display = '';
+  document.getElementById('actions-pre').style.display = '';
+  document.getElementById('btn-wrong-only').style.color = 'var(--red)';
+  document.getElementById('btn-wrong-only').style.borderColor = '#7f1d1d';
+  document.getElementById('mode-label').textContent = 'Chybné otázky (' + wrongOnes.length + ')';
+};
+
+document.getElementById('btn-reset').onclick = () => {
+  activeSection = 'all';
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('[data-section="all"]').classList.add('active');
+  init('all', false);
+  document.getElementById('mode-label').textContent = 'Normálny režim';
+};
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeSection = tab.dataset.section;
+    init(activeSection, false);
+    const names = {all:'Normálny režim', 0:'Formuláre', 1:'Session & Cookies', 2:'PHP + MySQL', 3:'Bezpečnosť'};
+    document.getElementById('mode-label').textContent = names[activeSection] || '';
+  };
+});
+
+init('all', false);
+</script>
+</body>
+</html>
