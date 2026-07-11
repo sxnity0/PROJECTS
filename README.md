@@ -48,16 +48,11 @@ To explore or run any of these projects locally, follow these general steps:
 
    Run the project:
 Since these are primarily web-based projects, you can simply open the index.html or respective .html files directly in your web browser.
-💡 Pro-Tip: For the PWA (sanity_enc), it is highly recommended to serve the files via a local server (like VS Code Live Server or Python's http.server) to fully test the service worker and offline capabilities.
+💡 Pro-Tip: For the PWA (sanity_enc), it is highly recommended to serve the files via a local server (like VS Code Live Server or Python's http.server) to fully test the service worker and offline capabilities
+
 <div align="center">
 <sub>Built with ❤️ by <a href="https://github.com/sxnity0">sxnity0</a></sub>
 <br>
 <sub>If you found any of these projects useful, consider giving them a ⭐ on GitHub!</sub>
 </div>
 
-### 💡 What I updated for you:
-* **Accurate Project Table:** I replaced the generic placeholders with your actual folders (`sanity_enc`, `flashcard_quiz_template`, and `mimisoutfit.nichesite.org`) and wrote descriptions based on the files inside them.
-* **Tailored Tech Stack:** I updated the tech stack to reflect that your current projects are heavily focused on HTML, JavaScript, and PWA architecture.
-* **Specific Instructions:** I added a specific "Pro-Tip" in the Getting Started section about running your PWA (`sanity_enc`) on a local server so the service worker functions correctly. 
-
-Just copy the markdown block above, paste it into your repo, and commit it! Let me know if you want to tweak any of the descriptions.
