@@ -48,6 +48,7 @@ To explore or run any of these projects locally, follow these general steps:
 
    Run the project:
 Since these are primarily web-based projects, you can simply open the index.html or respective .html files directly in your web browser.
+
 💡 Pro-Tip: For the PWA (sanity_enc), it is highly recommended to serve the files via a local server (like VS Code Live Server or Python's http.server) to fully test the service worker and offline capabilities
 
 <div align="center">
