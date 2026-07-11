@@ -1,0 +1,24 @@
+name: Daily Auto Commit
+
+on:
+  schedule:
+    # Runs every day at 10:00 UTC (12:00 PM CEST)
+    - cron: '0 10 * * *'
+  workflow_dispatch: # Allows you to manually run it to test
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create empty commit
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: automated daily commit"
+          git push
