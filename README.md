@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 Welcome to My Projects Repository!</h1>
+  <h1>🚀 Welcome to My Projects !</h1>
   <p>
     <em>A central hub for my software development journey, featuring a collection of web apps, tools, and experiments.</em>
   </p>
@@ -55,17 +55,6 @@ To explore or run any of these projects locally, follow these general steps:
     ```
 3.  **Follow the project-specific instructions:**
     Look for a `README.md` inside the individual project folder for exact commands to install dependencies and run the application.
-
----
-
-## 📫 Let's Connect!
-
-If you have questions about any of these projects, want to collaborate, or just want to say hi, feel free to reach out:
-
-*   **GitHub:** [@sxnity0](https://github.com/sxnity0)
-*   **LinkedIn:** [Your Name](https://linkedin.com/in/yourprofile)
-*   **Twitter/X:** [@yourhandle](https://twitter.com/yourhandle)
-*   **Email:** your.email@example.com
 
 ---
 
