@@ -1,10 +1,9 @@
 <div align="center">
-  <h1>🚀 Welcome to My Projects !</h1>
+  <h1>🚀 Welcome to My Projects!</h1>
   <p>
     <em>A central hub for my software development journey, featuring a collection of web apps, tools, and experiments.</em>
   </p>
   
-  <!-- Dynamic Badges -->
   ![GitHub last commit](https://img.shields.io/github/last-commit/sxnity0/PROJECTS?style=flat-square)
   ![GitHub repo size](https://img.shields.io/github/repo-size/sxnity0/PROJECTS?style=flat-square)
   ![GitHub issues](https://img.shields.io/github/issues/sxnity0/PROJECTS?style=flat-square)
@@ -20,11 +19,9 @@ Here is a curated list of the projects housed within this repository. Click on t
 
 | Project Name | Description | Tech Stack | Status |
 |:---|:---|:---|:---|
-| **[Project 1 Name](./path/to/project1)** | A brief description of what this project does and the problem it solves. | `Python` `Flask` `SQL` | ✅ Completed |
-| **[Project 2 Name](./path/to/project2)** | A brief description of what this project does and the problem it solves. | `React` `Node.js` `MongoDB` | 🚧 In Progress |
-| **[Project 3 Name](./path/to/project3)** | A brief description of what this project does and the problem it solves. | `C++` `OpenGL` | 💡 Idea / Concept |
-
-*(Add or remove rows as your repository grows!)*
+| **[sanity_enc](./sanity_enc)** | A Progressive Web App (PWA) featuring a Valorant Mastery Encyclopedia. Includes service workers and manifest files for offline capabilities. | `HTML` `JavaScript` `PWA` | 🚀 Active |
+| **[flashcard_quiz_template](./flashcard_quiz_template)** | A clean, responsive web-based flashcard and quiz template built entirely with HTML. | `HTML` `CSS` `JavaScript` | ✅ Completed |
+| **[mimisoutfit.nichesite.org](./mimisoutfit.nichesite.org)** | A mobile-optimized (v1) web project designed for a niche site layout. | `HTML` `Mobile Web` | 🚧 In Progress |
 
 ---
 
@@ -32,11 +29,9 @@ Here is a curated list of the projects housed within this repository. Click on t
 
 A summary of the languages, frameworks, and tools I use across these projects:
 
-*   **Languages:** Python, JavaScript, TypeScript, C++, Java
-*   **Frontend:** React, HTML5, CSS3, Tailwind CSS
-*   **Backend:** Node.js, Express, Django, Flask
-*   **Databases:** PostgreSQL, MongoDB, SQLite
-*   **Tools & DevOps:** Git, Docker, GitHub Actions, AWS
+* **Languages:** HTML5, JavaScript
+* **Web Technologies:** Progressive Web Apps (PWA), Service Workers, Responsive Design
+* **Tools & DevOps:** Git, GitHub
 
 ---
 
@@ -44,22 +39,25 @@ A summary of the languages, frameworks, and tools I use across these projects:
 
 To explore or run any of these projects locally, follow these general steps:
 
-1.  **Clone this repository:**
-    ```bash
-    git clone https://github.com/sxnity0/PROJECTS.git
-    cd PROJECTS
-    ```
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/sxnity0/PROJECTS.git
+   cd PROJECTS
+
 2.  **Navigate to the specific project folder:**
-    ```bash
-    cd path/to/specific_project
-    ```
-3.  **Follow the project-specific instructions:**
-    Look for a `README.md` inside the individual project folder for exact commands to install dependencies and run the application.
 
----
-
+   Run the project:
+Since these are primarily web-based projects, you can simply open the index.html or respective .html files directly in your web browser.
+💡 Pro-Tip: For the PWA (sanity_enc), it is highly recommended to serve the files via a local server (like VS Code Live Server or Python's http.server) to fully test the service worker and offline capabilities.
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://github.com/sxnity0">sxnity0</a></sub>
-  <br>
-  <sub>If you found any of these projects useful, consider giving them a ⭐ on GitHub!</sub>
+<sub>Built with ❤️ by <a href="https://github.com/sxnity0">sxnity0</a></sub>
+<br>
+<sub>If you found any of these projects useful, consider giving them a ⭐ on GitHub!</sub>
 </div>
+
+### 💡 What I updated for you:
+* **Accurate Project Table:** I replaced the generic placeholders with your actual folders (`sanity_enc`, `flashcard_quiz_template`, and `mimisoutfit.nichesite.org`) and wrote descriptions based on the files inside them.
+* **Tailored Tech Stack:** I updated the tech stack to reflect that your current projects are heavily focused on HTML, JavaScript, and PWA architecture.
+* **Specific Instructions:** I added a specific "Pro-Tip" in the Getting Started section about running your PWA (`sanity_enc`) on a local server so the service worker functions correctly. 
+
+Just copy the markdown block above, paste it into your repo, and commit it! Let me know if you want to tweak any of the descriptions.
