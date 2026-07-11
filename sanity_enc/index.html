@@ -1,0 +1,3962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#07030f" />
+<meta name="description" content="The Complete Valorant Mastery Encyclopedia — a textbook-level curriculum from Iron to Radiant covering mechanics, systems, psychology, and elite performance." />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Sanity" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sanity — The Complete Valorant Mastery Encyclopedia" />
+<meta property="og:description" content="An editorial-style curriculum for mastering Valorant from fundamentals to elite-level decision making." />
+<meta property="og:site_name" content="Sanity" />
+<meta property="og:image" content="icon-512.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sanity — The Complete Valorant Mastery Encyclopedia" />
+<meta name="twitter:description" content="The full Valorant Mastery Encyclopedia — research-backed, volume-driven, and built for serious players." />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<title>Sanity — The Complete Valorant Mastery Encyclopedia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Sanity — The Complete Valorant Mastery Encyclopedia",
+  "description": "A research-backed curriculum spanning twelve volumes from Iron to Radiant, covering mechanics, decision-making, psychology, and elite performance.",
+  "author": {
+    "@type": "Organization",
+    "name": "Sanity"
+  },
+  "genre": "Gaming / Esports / Strategy",
+  "inLanguage": "en"
+}
+</script>
+<style>
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --bg-0: #07030f;
+  --bg-1: #0d0720;
+  --bg-2: #150b2e;
+  --bg-3: #1f1147;
+  --bg-4: #2a1560;
+  --bg-panel: rgba(21, 11, 46, 0.55);
+  --bg-panel-hover: rgba(42, 21, 96, 0.55);
+
+  --p-50: #faf5ff;
+  --p-100: #f3e8ff;
+  --p-200: #e9d5ff;
+  --p-300: #d8b4fe;
+  --p-400: #c084fc;
+  --p-500: #a855f7;
+  --p-600: #9333ea;
+  --p-700: #7e22ce;
+  --p-800: #6b21a8;
+  --p-900: #581c87;
+
+  --text-0: #f5efff;
+  --text-1: #e4d5ff;
+  --text-2: #b9a5d9;
+  --text-3: #7f6ba0;
+  --text-muted: #5a4a7a;
+
+  --border-subtle: rgba(168, 85, 247, 0.15);
+  --border-mid: rgba(168, 85, 247, 0.28);
+  --border-strong: rgba(192, 132, 252, 0.5);
+
+  --glow: 0 0 40px rgba(168, 85, 247, 0.35);
+  --glow-soft: 0 0 20px rgba(147, 51, 234, 0.25);
+
+  --grad-text: linear-gradient(135deg, #f3e8ff 0%, #c084fc 50%, #a855f7 100%);
+  --grad-text-warm: linear-gradient(135deg, #f5efff 0%, #e9d5ff 45%, #c084fc 100%);
+  --grad-text-accent: linear-gradient(90deg, #a855f7, #ec4899, #a855f7);
+  --grad-panel: linear-gradient(180deg, rgba(42, 21, 96, 0.5) 0%, rgba(21, 11, 46, 0.5) 100%);
+  --grad-divider: linear-gradient(90deg, transparent 0%, rgba(192, 132, 252, 0.5) 50%, transparent 100%);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --sidebar-w: 340px;
+  --content-max: 860px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: 'ss01', 'ss02', 'cv11';
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--text-1);
+  background: var(--bg-0);
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.005em;
+}
+
+/* Animated mesh gradient background */
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: var(--bg-0);
+  overflow: hidden;
+}
+.bg-mesh::before,
+.bg-mesh::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+  animation: mesh-drift 28s var(--ease-in-out) infinite alternate;
+  will-change: transform;
+}
+.bg-mesh::before {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.45) 0%, transparent 60%);
+  top: -200px;
+  left: -200px;
+}
+.bg-mesh::after {
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(76, 29, 149, 0.4) 0%, transparent 60%);
+  bottom: -300px;
+  right: -300px;
+  animation-delay: -14s;
+  animation-direction: alternate-reverse;
+}
+
+.bg-stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(217, 180, 254, 0.4), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(233, 213, 255, 0.3), transparent),
+    radial-gradient(1.5px 1.5px at 50% 50%, rgba(192, 132, 252, 0.35), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(217, 180, 254, 0.3), transparent),
+    radial-gradient(1px 1px at 90% 60%, rgba(243, 232, 255, 0.25), transparent),
+    radial-gradient(1.5px 1.5px at 33% 80%, rgba(192, 132, 252, 0.3), transparent),
+    radial-gradient(1px 1px at 15% 65%, rgba(217, 180, 254, 0.3), transparent);
+  background-size: 200% 200%;
+  animation: star-drift 60s linear infinite;
+}
+
+@keyframes mesh-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(80px, -60px) scale(1.1); }
+  100% { transform: translate(-50px, 50px) scale(0.95); }
+}
+
+@keyframes star-drift {
+  from { background-position: 0 0; }
+  to { background-position: 200% 200%; }
+}
+
+::selection {
+  background: var(--p-700);
+  color: var(--p-50);
+}
+
+a { color: var(--p-300); text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--p-200); }
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--p-800), var(--p-600));
+  border-radius: 5px;
+  border: 2px solid var(--bg-1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--p-700), var(--p-500));
+}
+
+/* ============================================
+   READING PROGRESS
+   ============================================ */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--p-600), var(--p-400), var(--p-300));
+  z-index: 1000;
+  box-shadow: 0 0 12px var(--p-500);
+  transition: width 0.1s ease-out;
+}
+
+/* ============================================
+   TOP NAV
+   ============================================ */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: rgba(7, 3, 15, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 900;
+  transition: transform 0.4s var(--ease-out), background 0.3s ease;
+}
+
+.topbar.scrolled {
+  background: rgba(7, 3, 15, 0.92);
+  border-bottom-color: var(--border-mid);
+}
+
+.topbar.hidden {
+  transform: translateY(-100%);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-0);
+  letter-spacing: -0.02em;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--p-600), var(--p-800));
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: logo-shimmer 3s var(--ease-in-out) infinite;
+}
+
+@keyframes logo-shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+.logo-mark svg {
+  color: var(--p-100);
+  filter: drop-shadow(0 0 4px rgba(243, 232, 255, 0.5));
+}
+
+.logo-title { font-weight: 600; }
+.logo-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: -2px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--bg-panel);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--bg-panel-hover);
+  color: var(--p-300);
+  border-color: var(--border-mid);
+  transform: translateY(-1px);
+}
+
+.icon-btn svg { width: 18px; height: 18px; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  padding: 140px 48px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-mid);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-300);
+  font-weight: 500;
+  backdrop-filter: blur(12px);
+  width: fit-content;
+  margin-bottom: 32px;
+  animation: fade-slide-up 0.8s var(--ease-out) 0.1s backwards;
+}
+
+.hero-kicker::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--p-400);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--p-500);
+  animation: pulse-dot 2s var(--ease-in-out) infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 104px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  margin-bottom: 32px;
+  max-width: 1000px;
+}
+
+.hero h1 .line { display: block; overflow: hidden; }
+.hero h1 .word { display: inline-block; animation: fade-slide-up 1s var(--ease-out) backwards; }
+.hero h1 .word:nth-child(1) { animation-delay: 0.2s; }
+.hero h1 .word:nth-child(2) { animation-delay: 0.35s; }
+.hero h1 .word:nth-child(3) { animation-delay: 0.5s; }
+
+.hero h1 .italic { font-style: italic; font-weight: 300; }
+
+.grad-text {
+  background: var(--grad-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.grad-text-warm {
+  background: var(--grad-text-warm);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.grad-text-accent {
+  background: var(--grad-text-accent);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.appendix-title {
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  color: var(--text-0) !important;
+  text-shadow: 0 0 18px rgba(192, 132, 252, 0.15);
+}
+
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-lede {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.6;
+  color: var(--text-2);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 24;
+  max-width: 700px;
+  margin-bottom: 56px;
+  letter-spacing: -0.01em;
+  animation: fade-slide-up 1s var(--ease-out) 0.7s backwards;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid var(--border-mid);
+  border-bottom: 1px solid var(--border-mid);
+  max-width: 900px;
+  animation: fade-slide-up 1s var(--ease-out) 0.9s backwards;
+}
+
+.stat {
+  flex: 1;
+  min-width: 180px;
+  padding: 24px 28px;
+  border-right: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+.stat:last-child { border-right: none; }
+
+.stat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(147, 51, 234, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.stat:hover::before { opacity: 1; }
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 72;
+  margin-bottom: 8px;
+  background: var(--grad-text-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stat-label svg { width: 12px; height: 12px; opacity: 0.7; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 48px;
+  animation: fade-slide-up 1s var(--ease-out) 1.1s backwards;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--p-600), var(--p-800));
+  color: var(--p-50);
+  box-shadow: 0 4px 20px rgba(147, 51, 234, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--p-500), var(--p-700));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(147, 51, 234, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary span, .btn-primary svg { position: relative; z-index: 1; }
+
+.btn-secondary {
+  background: var(--bg-panel);
+  color: var(--text-1);
+  border: 1px solid var(--border-mid);
+  backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-panel-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+.app-layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  gap: 48px;
+  padding: 48px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .app-layout { grid-template-columns: 1fr; padding: 32px 20px; }
+  .sidebar { position: relative; order: -1; }
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar {
+  position: sticky;
+  top: 96px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  scrollbar-width: thin;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+
+.sidebar-header {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sidebar-header svg { width: 14px; height: 14px; color: var(--p-500); }
+
+.toc-search {
+  margin: 0 0 16px;
+  position: relative;
+}
+.toc-search input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-1);
+  font-size: 13px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: all 0.2s ease;
+}
+.toc-search input::placeholder { color: var(--text-3); }
+.toc-search input:focus {
+  border-color: var(--border-strong);
+  background: var(--bg-panel-hover);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12);
+}
+.toc-search svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  color: var(--text-3);
+}
+
+/* TREE GRAPH TOC */
+.tree-toc {
+  position: relative;
+  padding: 0 0 0 0;
+}
+
+.tree-toc .tree-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.tree-toc .tree-lines path {
+  fill: none;
+  stroke: var(--p-800);
+  stroke-width: 1;
+  stroke-opacity: 0.5;
+  transition: all 0.4s var(--ease-out);
+}
+
+.tree-toc .tree-lines path.active {
+  stroke: var(--p-400);
+  stroke-opacity: 1;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px var(--p-500));
+}
+
+.tree-volume {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.tree-volume-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px 10px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-1);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-out);
+  text-align: left;
+  position: relative;
+  letter-spacing: -0.005em;
+}
+
+.tree-volume-btn::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--p-800);
+  box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.25);
+  flex-shrink: 0;
+  transition: all 0.3s var(--ease-out);
+}
+
+.tree-volume-btn:hover {
+  background: var(--bg-panel);
+  color: var(--p-200);
+}
+
+.tree-volume-btn:hover::before {
+  background: var(--p-500);
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.35), 0 0 12px var(--p-600);
+}
+
+.tree-volume-btn.expanded::before {
+  background: var(--p-400);
+  box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.4), 0 0 16px var(--p-500);
+}
+
+.tree-volume-btn .vol-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--p-300);
+  opacity: 0.7;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.tree-volume-btn .vol-name { flex: 1; }
+
+.tree-volume-btn .chev {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.tree-volume-btn.expanded .chev {
+  transform: rotate(90deg);
+  opacity: 0.9;
+  color: var(--p-400);
+}
+
+.tree-chapters {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease-out);
+  margin-left: 15px;
+  padding-left: 10px;
+  border-left: 1px dashed var(--p-900);
+}
+
+.tree-volume.expanded .tree-chapters {
+  max-height: 2000px;
+  transition: max-height 0.7s var(--ease-out);
+}
+
+.tree-chapter {
+  display: block;
+  padding: 6px 10px 6px 16px;
+  color: var(--text-3);
+  font-size: 12.5px;
+  line-height: 1.5;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tree-chapter::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: var(--p-900);
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.tree-chapter:hover {
+  color: var(--p-200);
+  background: var(--bg-panel);
+}
+.tree-chapter:hover::before {
+  width: 14px;
+  background: var(--p-500);
+  box-shadow: 0 0 8px var(--p-600);
+}
+
+.tree-chapter.active {
+  color: var(--p-100);
+  background: var(--bg-panel-hover);
+}
+.tree-chapter.active::before {
+  background: var(--p-400);
+  box-shadow: 0 0 8px var(--p-500);
+  width: 14px;
+}
+
+.tree-chapter .ch-num {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin-right: 6px;
+  opacity: 0.6;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.content {
+  max-width: var(--content-max);
+}
+
+.volume-section {
+  margin-bottom: 140px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.volume-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.volume-marker {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.volume-marker::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--grad-divider);
+}
+
+.vol-num {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1;
+  font-style: italic;
+  background: linear-gradient(180deg, var(--p-400), var(--p-800));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-variation-settings: 'opsz' 144;
+  letter-spacing: -0.04em;
+}
+
+.vol-meta { flex: 1; }
+
+.vol-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--p-400);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.vol-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-variation-settings: 'opsz' 96;
+  color: var(--text-0);
+}
+
+.vol-overview {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--text-2);
+  font-weight: 300;
+  font-style: italic;
+  padding: 28px 32px;
+  background: linear-gradient(180deg, var(--bg-panel), transparent);
+  border-left: 2px solid var(--p-600);
+  margin-bottom: 56px;
+  font-variation-settings: 'opsz' 36;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.chapter {
+  margin-bottom: 72px;
+  padding-top: 8px;
+  scroll-margin-top: 100px;
+}
+
+.chapter-marker {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ch-number {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--p-500);
+  letter-spacing: 0.1em;
+  font-style: italic;
+  white-space: nowrap;
+  font-variation-settings: 'opsz' 18;
+}
+
+.ch-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-variation-settings: 'opsz' 96;
+  color: var(--text-0);
+  flex: 1;
+}
+
+.ch-title .italic { font-style: italic; font-weight: 300; color: var(--p-200); }
+
+/* SUBSECTIONS */
+h3.sub-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-0);
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 48;
+  margin-top: 48px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+h3.sub-title::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--p-400), var(--p-700));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+h4.subsub-title {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--p-200);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.content p {
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-2);
+}
+
+.content strong { color: var(--text-0); font-weight: 600; }
+.content em { color: var(--p-200); font-style: italic; }
+.content em strong { color: var(--p-100); }
+
+/* CALLOUTS */
+.callout {
+  padding: 24px 28px;
+  background: linear-gradient(180deg, var(--bg-panel), var(--bg-panel-hover));
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  margin: 28px 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.callout::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--p-400), var(--p-700));
+}
+
+.callout-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-300);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.callout-title svg { width: 15px; height: 15px; color: var(--p-400); }
+
+.callout-insight::before { background: linear-gradient(180deg, var(--p-400), var(--p-700)); }
+.callout-warning::before { background: linear-gradient(180deg, #f59e0b, #b45309); }
+.callout-warning .callout-title { color: #fbbf24; }
+.callout-drill::before { background: linear-gradient(180deg, #a855f7, #ec4899); }
+
+.callout-insight .callout-title svg,
+.callout-drill .callout-title svg { color: inherit; }
+
+.callout p { font-size: 15px; line-height: 1.7; color: var(--text-2); }
+.callout p:last-child { margin-bottom: 0; }
+
+/* LISTS */
+.content ul, .content ol {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.content li {
+  position: relative;
+  padding: 8px 0 8px 32px;
+  color: var(--text-2);
+  line-height: 1.65;
+  font-size: 15.5px;
+}
+
+.content li::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--p-500);
+  box-shadow: 0 0 8px var(--p-600);
+}
+
+.content ol { counter-reset: item; }
+.content ol li { counter-increment: item; }
+.content ol li::before {
+  content: counter(item, decimal-leading-zero);
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  left: 0;
+  top: 9px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--p-400);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* NUMBERED CARDS (for things like sub-skills, mistakes, priorities) */
+.numbered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+  list-style: none;
+}
+
+.num-card {
+  display: flex;
+  gap: 18px;
+  padding: 18px 22px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all 0.3s var(--ease-out);
+  backdrop-filter: blur(8px);
+}
+
+.num-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-panel-hover);
+  transform: translateX(4px);
+}
+
+.num-card .num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+  background: var(--grad-text-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  flex-shrink: 0;
+  font-variation-settings: 'opsz' 48;
+  letter-spacing: -0.02em;
+}
+
+.num-card .label { font-family: var(--font-mono); font-size: 11px; color: var(--p-400); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.num-card .title { color: var(--text-0); font-weight: 500; font-size: 15px; margin-bottom: 6px; }
+.num-card .desc { color: var(--text-2); font-size: 14px; line-height: 1.6; }
+
+/* COMPARISON TABLES */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border-subtle);
+  margin: 28px 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.compare > div {
+  padding: 24px 22px;
+  background: var(--bg-2);
+}
+
+.compare .compare-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.compare .compare-title.good { background: rgba(34, 197, 94, 0.08); color: #86efac; border-bottom: 1px solid rgba(34, 197, 94, 0.2); }
+.compare .compare-title.bad { background: rgba(239, 68, 68, 0.08); color: #fca5a5; border-bottom: 1px solid rgba(239, 68, 68, 0.2); }
+
+.compare ul { list-style: none; padding: 0; margin: 0; }
+.compare li { padding: 6px 0 6px 20px; font-size: 14px; color: var(--text-2); }
+.compare li::before { top: 14px !important; left: 0 !important; background: currentColor; }
+.compare .compare-title.good + ul li::before,
+.compare div:has(> .compare-title.good) li::before { color: #4ade80; }
+
+/* RANK CARDS (for dominant failure modes) */
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.rank-card {
+  padding: 20px 22px;
+  background: var(--grad-panel);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s var(--ease-out);
+  backdrop-filter: blur(8px);
+}
+
+.rank-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 12px 40px -12px var(--glow-soft);
+}
+
+.rank-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(192, 132, 252, 0.12), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.rank-card:hover::before { opacity: 1; }
+
+.rank-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-0);
+  font-style: italic;
+  font-variation-settings: 'opsz' 48;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  background: var(--grad-text-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rank-issue {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p-400);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.rank-desc { font-size: 13.5px; line-height: 1.6; color: var(--text-2); }
+
+/* INLINE ICON CARDS (for Audio intelligence etc.) */
+.icon-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.icon-card {
+  padding: 22px 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all 0.3s var(--ease-out);
+  backdrop-filter: blur(8px);
+}
+
+.icon-card:hover {
+  border-color: var(--p-700);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px -8px var(--glow-soft);
+}
+
+.icon-card .ic-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--p-700), var(--p-900));
+  border-radius: 10px;
+  margin-bottom: 14px;
+  color: var(--p-100);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 12px rgba(147, 51, 234, 0.3);
+}
+
+.icon-card .ic-icon svg { width: 18px; height: 18px; }
+
+.icon-card .ic-title {
+  font-weight: 600;
+  color: var(--text-0);
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.icon-card .ic-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+/* TIME GEOMETRY */
+.time-timeline {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  margin: 28px 0;
+  padding: 0 10px;
+  position: relative;
+}
+
+.time-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--p-500), var(--p-800), var(--p-500));
+  opacity: 0.4;
+}
+
+.time-row {
+  display: contents;
+}
+
+.time-stamp {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--p-400);
+  padding: 18px 0;
+  text-align: right;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.time-stamp::after {
+  content: '';
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--p-600);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.25), 0 0 12px var(--p-600);
+  transform: translateY(-50%);
+}
+
+.time-body {
+  padding: 18px 24px 18px 50px;
+  background: var(--bg-panel);
+  border-left: none;
+  margin-bottom: 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s var(--ease-out);
+  backdrop-filter: blur(6px);
+}
+
+.time-body:hover { border-color: var(--border-mid); transform: translateX(4px); }
+
+.time-body strong { color: var(--p-200); display: block; font-size: 15px; margin-bottom: 6px; }
+.time-body p { margin: 0; font-size: 13.5px; color: var(--text-2); line-height: 1.55; }
+
+/* SCORE RUBRIC TABLE */
+.rubric {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.rubric th {
+  padding: 14px 20px;
+  background: var(--bg-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-200);
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid var(--border-mid);
+}
+
+.rubric td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.rubric tr:last-child td { border-bottom: none; }
+.rubric tr:hover td { background: rgba(42, 21, 96, 0.25); }
+
+.rubric .score-cell {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--p-300);
+  text-align: center;
+  padding: 14px 10px;
+  background: rgba(21, 11, 46, 0.5);
+}
+
+/* INLINE CODE / MONO */
+code.inline {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-3);
+  color: var(--p-200);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* DIVIDERS */
+.divider {
+  height: 1px;
+  background: var(--grad-divider);
+  margin: 56px 0;
+}
+
+/* GLOSSARY */
+.glossary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: var(--border-subtle);
+  margin: 28px 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.gloss-term {
+  background: var(--bg-2);
+  padding: 16px 20px;
+  transition: background 0.2s ease;
+}
+.gloss-term:hover { background: var(--bg-3); }
+
+.gloss-word {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--p-300);
+  font-size: 14px;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.gloss-def { font-size: 13.5px; line-height: 1.6; color: var(--text-2); }
+
+/* WEEKLY SCHEDULE */
+.schedule {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 28px 0;
+  backdrop-filter: blur(6px);
+}
+
+.schedule-head {
+  padding: 18px 24px;
+  background: linear-gradient(135deg, var(--p-900), var(--p-700));
+  color: var(--p-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.schedule-head strong { font-family: var(--font-display); font-size: 18px; font-style: italic; font-weight: 500; }
+.schedule-head span { font-size: 12px; opacity: 0.8; font-family: var(--font-mono); letter-spacing: 0.08em; }
+
+.schedule-body { padding: 0; }
+
+.schedule-day {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 16px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-subtle);
+  transition: background 0.2s ease;
+  align-items: center;
+}
+
+.schedule-day:hover { background: var(--bg-panel-hover); }
+.schedule-day:first-of-type { border-top: none; }
+
+.day-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--p-400);
+  text-transform: uppercase;
+}
+
+.day-activity { font-size: 14px; color: var(--text-1); line-height: 1.4; }
+.day-activity strong { color: var(--text-0); font-weight: 500; }
+.day-activity span { display: block; font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.day-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* FOOTER */
+.site-footer {
+  margin-top: 120px;
+  padding: 56px 48px 40px;
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, transparent, var(--bg-1));
+}
+
+.footer-mark {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 400;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-variation-settings: 'opsz' 96;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.footer-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* FLOATING ACTIONS */
+.fab-group {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fab {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-3);
+  border: 1px solid var(--border-mid);
+  color: var(--p-200);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  transition: all 0.3s var(--ease-out);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.fab:hover {
+  background: var(--p-700);
+  color: var(--p-50);
+  border-color: var(--p-500);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4);
+}
+
+.fab.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.fab svg { width: 20px; height: 20px; }
+
+/* SEARCH OVERLAY */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 3, 15, 0.8);
+  backdrop-filter: blur(16px);
+  z-index: 950;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.search-overlay.open { opacity: 1; pointer-events: auto; }
+
+.search-panel {
+  width: 90%;
+  max-width: 640px;
+  background: var(--bg-2);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.35s var(--ease-out);
+  box-shadow: 0 24px 64px -16px var(--glow);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-overlay.open .search-panel { transform: translateY(0) scale(1); }
+
+.search-input-row {
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 14px;
+}
+
+.search-input-row svg { width: 20px; height: 20px; color: var(--p-400); flex-shrink: 0; }
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-0);
+  font-size: 18px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 36;
+  outline: none;
+  letter-spacing: -0.01em;
+}
+
+.search-input::placeholder { color: var(--text-3); }
+
+.search-kbd {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 8px;
+  background: var(--bg-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-3);
+  letter-spacing: 0.05em;
+}
+
+.search-results {
+  overflow-y: auto;
+  padding: 12px;
+  flex: 1;
+  max-height: 50vh;
+}
+
+.search-results-empty {
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+.search-results-empty svg {
+  width: 40px;
+  height: 40px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.search-result {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.search-result:hover, .search-result.selected {
+  background: var(--bg-panel-hover);
+  border-color: var(--border-mid);
+}
+
+.search-result-title {
+  font-weight: 500;
+  color: var(--text-0);
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-result-title svg { width: 14px; height: 14px; color: var(--p-400); }
+
+.search-result-context {
+  font-size: 12px;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+
+.search-result-context mark {
+  background: var(--p-800);
+  color: var(--p-100);
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+.search-footer {
+  padding: 10px 24px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-1);
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.05em;
+}
+
+.search-footer span { display: inline-flex; align-items: center; gap: 6px; }
+.search-footer .kbd {
+  background: var(--bg-3);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--border-subtle);
+  font-size: 10px;
+}
+
+/* ============================================
+   ACCESSIBILITY / REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero { padding: 120px 24px 60px; }
+  .hero-stats { flex-direction: column; }
+  .stat { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .stat:last-child { border-bottom: none; }
+  .compare { grid-template-columns: 1fr; }
+  .app-layout { padding: 32px 20px; }
+  .vol-num { font-size: 48px; }
+  .vol-title { font-size: 26px; }
+  .time-timeline { grid-template-columns: 60px 1fr; }
+  .time-timeline::before { left: 40px; }
+  .time-stamp::after { right: -20px; }
+  .time-body { padding-left: 20px; }
+  .fab-group { right: 16px; bottom: 16px; }
+}
+
+/* ============================================
+   UTILITIES & ANIMATION
+   ============================================ */
+.fade-in-up { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.fade-in-up.in { opacity: 1; transform: translateY(0); }
+
+.glow-text { text-shadow: 0 0 24px var(--glow); }
+
+/* ============================================
+   MOBILE RESPONSIVE & SLIDE-OUT DRAWER
+   ============================================ */
+#menuBtn { display: none; }
+.sidebar-overlay {
+  display: none; position: fixed; inset: 0; top: 72px; background: rgba(0,0,0,0.6); z-index: 840;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+.sidebar-overlay.open { display: block; }
+
+@media (max-width: 1024px) {
+  #menuBtn { display: grid; }
+  .app-layout { grid-template-columns: 1fr; padding: 24px 16px; gap: 0; }
+  
+  .sidebar {
+    position: fixed; top: 72px; left: 0; bottom: 0; width: 85%; max-width: 360px;
+    background: var(--bg-1); z-index: 850; transform: translateX(-100%);
+    transition: transform 0.35s var(--ease-out); border-right: 1px solid var(--border-mid);
+    padding: 24px; height: auto; box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+  }
+  .sidebar.open { transform: translateX(0); }
+  
+  .hero { padding: 110px 20px 60px; min-height: auto; }
+  .hero h1 { font-size: 42px; margin-bottom: 24px; }
+  .hero-lede { font-size: 17px; margin-bottom: 32px; }
+  .hero-stats { flex-direction: column; }
+  .stat { border-right: none; border-bottom: 1px solid var(--border-subtle); min-width: unset; padding: 16px 0; }
+  .stat:last-child { border-bottom: none; }
+  .stat-value { font-size: 32px; }
+  
+  .vol-num { font-size: 48px; }
+  .vol-title { font-size: 24px; }
+  .vol-overview { font-size: 16px; padding: 16px; margin-bottom: 32px; }
+  
+  .chapter-marker { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .ch-title { font-size: 24px; }
+  
+  .compare { grid-template-columns: 1fr; }
+  .time-timeline { grid-template-columns: 60px 1fr; }
+  .time-timeline::before { left: 40px; }
+  .time-stamp::after { right: -20px; }
+  .time-body { padding: 16px 16px 16px 30px; }
+  
+  .schedule-day { grid-template-columns: 1fr; gap: 8px; padding: 16px; }
+  .day-time { justify-self: start; }
+  
+  .fab-group { right: 16px; bottom: 16px; }
+  .topbar { padding: 0 16px; }
+  .logo-sub { display: none; }
+  
+  body.menu-open { overflow: hidden; }
+}
+
+/* ============================================
+   LOADING SCREEN
+   ============================================ */
+.loader-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: radial-gradient(circle at center, var(--bg-2) 0%, var(--bg-0) 100%);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.loader-overlay.hidden {
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+.loader-content {
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  animation: loader-fade-in 0.8s var(--ease-out) forwards;
+}
+@keyframes loader-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.loader-mark {
+  position: relative; width: 80px; height: 80px;
+  display: grid; place-items: center;
+  color: var(--p-300);
+}
+.loader-mark svg {
+  width: 40px; height: 40px;
+  filter: drop-shadow(0 0 12px var(--p-500));
+  animation: loader-pulse 2s ease-in-out infinite;
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+.loader-ring {
+  position: absolute; inset: 0;
+  border: 2px solid transparent;
+  border-top-color: var(--p-400);
+  border-right-color: var(--p-600);
+  border-radius: 50%;
+  animation: loader-spin 1.2s linear infinite;
+}
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+.loader-title {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 500; font-style: italic;
+  background: var(--grad-text);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em; margin: 0;
+}
+.loader-sub {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text-3); margin: -10px 0 0;
+}
+.loader-bar {
+  width: 160px; height: 2px; background: var(--bg-3);
+  border-radius: 2px; overflow: hidden; margin-top: 8px;
+}
+.loader-progress {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--p-600), var(--p-400));
+  box-shadow: 0 0 10px var(--p-500);
+  animation: loader-fill 2s var(--ease-out) forwards;
+}
+@keyframes loader-fill {
+  0% { width: 0%; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- =========== LOADING SCREEN =========== -->
+<div class="loader-overlay" id="loader">
+  <div class="loader-content">
+    <div class="loader-mark">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+      <div class="loader-ring"></div>
+    </div>
+    <h2 class="loader-title">Valorant Mastery</h2>
+    <p class="loader-sub">Initializing Curriculum...</p>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+</div>
+
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-stars" aria-hidden="true"></div>
+<div class="reading-progress" id="progressBar"></div>
+
+<!-- =========== TOPBAR =========== -->
+<header class="topbar" id="topbar">
+  <div class="logo">
+    <div class="logo-mark">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        <path d="M8 7h8M8 11h6"></path>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-title">Sanity</div>
+      <div class="logo-sub">Valorant Encyclopedia</div>
+    </div>
+  </div>
+
+  <div class="topbar-actions">
+    <button class="icon-btn" id="menuBtn" title="Menu" aria-label="Open navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <button class="icon-btn" id="searchBtn" title="Search (Ctrl+K)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+    <a class="icon-btn" href="#preface" title="Jump to Preface">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- =========== HERO =========== -->
+<section class="hero">
+  <div class="hero-kicker">
+    World-Class Authorship · Research-Backed Curriculum
+  </div>
+  <h1>
+    <span class="line"><span class="word grad-text">The Complete</span></span>
+    <span class="line"><span class="word">Valorant Mastery</span></span>
+    <span class="line"><span class="word"><span class="italic grad-text-accent">Encyclopedia</span></span></span>
+  </h1>
+  <p class="hero-lede">
+    Every concept taught from first principles — including the why behind the what.
+    A textbook-level curriculum spanning twelve volumes from Iron to Radiant, authored
+    under the lens of competitive psychology, motor learning science, and professional esports.
+    This is not a guide. This is the closest thing to a Valorant PhD curriculum ever assembled.
+  </p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-value">12</div>
+      <div class="stat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect></svg>
+        Volumes
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">30K+</div>
+      <div class="stat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+        Words
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">6</div>
+      <div class="stat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 8 22 9 17 14 18 21 12 18 6 21 7 14 2 9 9 8 12 2"></polygon></svg>
+        Skill Tiers
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">Fe→Ra</div>
+      <div class="stat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        Full Coverage
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-actions">
+    <a class="btn-primary" href="#preface">
+      <span>Begin the Curriculum</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <a class="btn-secondary" href="#vol-i" id="openTocBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+      Browse Volumes
+    </a>
+  </div>
+</section>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- =========== MAIN LAYOUT =========== -->
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6"></line>
+        <line x1="8" y1="12" x2="21" y2="12"></line>
+        <line x1="8" y1="18" x2="21" y2="18"></line>
+        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+      </svg>
+      Navigation
+    </div>
+
+    <div class="toc-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="tocSearch" placeholder="Jump to section..." autocomplete="off" />
+    </div>
+
+    <nav class="tree-toc" id="toc"></nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content" id="content">
+    <!-- Content will be populated by JavaScript from the curriculum data below -->
+  </main>
+
+</div>
+
+<!-- FLOATING ACTION BUTTONS -->
+<div class="fab-group">
+  <button class="fab" id="fabTop" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+  <button class="fab hidden" id="fabNext" title="Next section">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <polyline points="19 12 12 19 5 12"></polyline>
+    </svg>
+  </button>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search curriculum..." autocomplete="off" />
+      <div class="search-kbd">ESC</div>
+    </div>
+    <div class="search-results" id="searchResults">
+      <div class="search-results-empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        <div>Type to search the curriculum</div>
+      </div>
+    </div>
+    <div class="search-footer">
+      <span><span class="kbd">↑↓</span> navigate</span>
+      <span><span class="kbd">Enter</span> jump</span>
+      <span><span class="kbd">Ctrl+K</span> toggle</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-mark">The Encyclopedia</div>
+  <div class="footer-meta">Sanity · ~30,000 Words · 12 Volumes</div>
+</footer>
+
+<script>
+/* ============================================
+   CURRICULUM DATA — Source of Truth
+   All content derived from Valorant_Mastery_Encyclopedia_sanity.md
+   ============================================ */
+
+const curriculum = [
+  {
+    vol: 'I',
+    id: 'vol-i',
+    kicker: 'Volume I',
+    title: 'Foundations of Mastery',
+    overview: 'Before any mechanic, tactic, or agent is discussed, this volume establishes the mental models that determine whether your hours in Valorant produce growth or stagnation.',
+    chapters: [
+      {
+        id: 'preface',
+        num: 'Preface',
+        title: 'Why Most Players Never Improve',
+        body: `
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path></svg>Core Thesis</div>
+            <p><strong>Most players are not practicing. They are performing.</strong></p>
+          </div>
+          <p>Performance is executing what you already know under competitive pressure. Practice is deliberately targeting the boundaries of your current ability, accepting errors, and using those errors as information to recalibrate.</p>
+          <p>Research in skill acquisition — from Anders Ericsson's deliberate practice to motor learning studies — consistently shows that performance repetition without deliberate error-correction produces skill plateau, not skill growth.</p>
+          <p>The player who plays 3,000 hours of ranked, maintains a 50% winrate, and stays in Gold for two years is not lazy or stupid. They are simply performing — executing their current ceiling over and over — while mistaking game time for improvement time.</p>
+        `
+      },
+      {
+        id: 'ch11',
+        num: 'Chapter 1.1',
+        title: 'What Valorant Actually Is',
+        titleAccent: '(First Principles)',
+        body: `
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Definition</div>
+            <p>Valorant is, at its mathematical foundation, a round-based economy game with lethal, ability-augmented gunfights in which <em>information asymmetry</em> is the primary competitive variable.</p>
+          </div>
+          <ul class="numbered-list">
+            <li class="num-card">
+              <div class="num">01</div>
+              <div><div class="label">Pillar</div><div class="title">Round-Based</div><div class="desc">The team that wins 13 rounds wins the match — not the team with the most kills. A team killing 40% fewer enemies can still win convincingly through better round management.</div></div>
+            </li>
+            <li class="num-card">
+              <div class="num">02</div>
+              <div><div class="label">Pillar</div><div class="title">Economy Game</div><div class="desc">Credits determine equipment. Equipment materially determines gunfight outcomes. One economic mistake can ripple across four or five rounds and determine a half winner.</div></div>
+            </li>
+            <li class="num-card">
+              <div class="num">03</div>
+              <div><div class="label">Pillar</div><div class="title">Ability-Augmented</div><div class="desc">Gunfights are decided by the interaction of mechanical skill, positioning, information, and ability usage — not aim alone.</div></div>
+            </li>
+            <li class="num-card">
+              <div class="num">04</div>
+              <div><div class="label">Pillar</div><div class="title">Information Asymmetry</div><div class="desc">The team that manages information better — gathers more, gives away less, acts on it faster and more correctly — wins a disproportionate share of rounds. This is the primary competitive variable.</div></div>
+            </li>
+          </ul>
+
+          <h3 class="sub-title">The Hierarchy of Valorant Skills</h3>
+          <div class="callout callout-warning">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Common Misconception</div>
+            <p>Tier 1 does not determine your rank. Most players stuck in Gold through Diamond are stuck because of failures in <strong>Tiers 3–5</strong>, not because their aim is mechanically insufficient. For the majority of players, raw aim training is not the highest-ROI activity.</p>
+          </div>
+
+          <h3 class="sub-title">The Time Geometry of a Round</h3>
+          <div class="time-timeline">
+            <div class="time-row">
+              <div class="time-stamp">30s</div>
+              <div class="time-body"><strong>Buy Phase</strong><p>Economic decisions, role assignments, initial strategic intent. Elite players use this to align the team on the execute or info plan — not as dead time.</p></div>
+            </div>
+            <div class="time-row">
+              <div class="time-stamp">0:00–0:45</div>
+              <div class="time-body"><strong>Early Round</strong><p>Initial positioning, information gathering, map control establishment. Most early deaths caused by predictable routing or over-aggressive peeking without information.</p></div>
+            </div>
+            <div class="time-row">
+              <div class="time-stamp">0:45–1:10</div>
+              <div class="time-body"><strong>Mid Round</strong><p>Information asymmetries typically resolve. Where most individual decision-making errors occur — holding too long, rotating too early, taking duels from bad positions.</p></div>
+            </div>
+            <div class="time-row">
+              <div class="time-stamp">1:10–1:40</div>
+              <div class="time-body"><strong>Late Round</strong><p>Forced action — one team must plant or attack; the other retakes or holds. Clutch situations, last-second rotations, and spike-race scenarios occur here.</p></div>
+            </div>
+            <div class="time-row">
+              <div class="time-stamp">:45s</div>
+              <div class="time-body"><strong>Post-Plant</strong><p>Once spike is planted, the entire economic and tactical calculus shifts. Attackers shift from executing to controlling post-plant positions. Distinct optimal strategies apply.</p></div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 'ch12',
+        num: 'Chapter 1.2',
+        title: 'The Mental Models',
+        titleAccent: 'That Separate Ranks',
+        body: `
+          <h3 class="sub-title">Expected Value Thinking</h3>
+          <p>Every decision in Valorant has an expected value. The question is never <em>"did this work?"</em> The question is <em>"does this have positive expected value over many repetitions?"</em></p>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path></svg>Resulting Bias</div>
+            <p>A solo-peek that works 25% of the time has negative expected value and is a <strong>mistake even when it succeeds</strong>. Evaluating play based on outcomes rather than decision quality is one of the most powerful barriers to improvement.</p>
+          </div>
+          <p>Instead of asking <em>"Did I win that duel?"</em> — ask: What was my position? What information did I have? Was this duel chosen or forced? What percentage of the time would I win this duel type? Was the risk proportionate to the gain?</p>
+
+          <h3 class="sub-title">Game State Awareness — Information You Always Have</h3>
+          <p>At every moment in a round, you have access to these data points — and most players use less than 50% of them:</p>
+          <ul>
+            <li><strong>The score</strong> — Determines how desperate or conservative the opponent is likely to be</li>
+            <li><strong>The round timer</strong> — What current time pressure demands of both teams</li>
+            <li><strong>The spike status</strong> — Picked up? Planted? Defused?</li>
+            <li><strong>Your economy</strong> — Your credits, and inferred opponent economy from their last buy</li>
+            <li><strong>Alive players</strong> — Changes the probability of every possible defensive configuration</li>
+            <li><strong>Agent ultimates</strong> — Which are likely charged based on round count and kills</li>
+            <li><strong>Team positions</strong> — If communicating, approximate ally positions</li>
+            <li><strong>Known enemy positions</strong> — With time-decay on reliability</li>
+          </ul>
+
+          <h3 class="sub-title">The Principle of Minimizing Variance</h3>
+          <div class="compare">
+            <div>
+              <div class="compare-title good">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Low-Variance Play
+              </div>
+              <ul>
+                <li>Only takes fights with positional or numerical advantage</li>
+                <li>Communicates position and info immediately</li>
+                <li>Rotates on information, not instinct</li>
+                <li>Does not over-commit when utility is spent</li>
+              </ul>
+            </div>
+            <div>
+              <div class="compare-title bad">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                High-Variance Play
+              </div>
+              <ul>
+                <li>Takes fights because they're available</li>
+                <li>Holds aggressive positions alone</li>
+                <li>Rotates on feeling rather than callouts</li>
+                <li>Uses abilities reactively rather than proactively</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 'ch13',
+        num: 'Chapter 1.3',
+        title: 'The Ranked System',
+        titleAccent: 'Understood Correctly',
+        body: `
+          <p>Valorant uses a modified Elo-type system with a hidden MMR. Your visible rank is a lagging indicator of your true MMR.</p>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path></svg>Three Critical Facts</div>
+            <p><strong>Your rank = where you win ~50% of games.</strong> When you're at your correct rank, the game feels difficult — by design.</p>
+            <p><strong>Carrying has diminishing returns.</strong> You cannot outcarry bad teammates indefinitely. If you're stuck, you are the correct variable.</p>
+            <p><strong>Streaks are MMR recalibration.</strong> After long win/loss streaks, the system recalibrates MMR more aggressively — which is why climbs feel sticky then rapid.</p>
+          </div>
+
+          <h3 class="sub-title">Rank-Specific Dominant Failure Modes</h3>
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-name">Iron · Bronze</div><div class="rank-issue">Mechanical Inconsistency</div><div class="rank-desc">Cannot reliably hit shots, cannot control movement while shooting, no consistent crosshair placement. Secondary: no economy concept.</div></div>
+            <div class="rank-card"><div class="rank-name">Silver</div><div class="rank-issue">Information Neglect</div><div class="rank-desc">Sufficient mechanics to win duels but loses rounds because sound, minimap, and communicated info isn't used to inform positioning.</div></div>
+            <div class="rank-card"><div class="rank-name">Gold</div><div class="rank-issue">Fight Selection Failure</div><div class="rank-desc">Has mechanics and basic info but cannot consistently identify which fights to take, when to trade, and when to disengage.</div></div>
+            <div class="rank-card"><div class="rank-name">Platinum</div><div class="rank-issue">Utility Discipline</div><div class="rank-desc">Can fight and use info but wastes abilities, uses them reactively rather than proactively, doesn't understand strategic kit value.</div></div>
+            <div class="rank-card"><div class="rank-name">Diamond</div><div class="rank-issue">Macro Strategy</div><div class="rank-desc">Executes individual rounds well but cannot adapt strategy based on opponent patterns, economy reads, and win-condition identification.</div></div>
+            <div class="rank-card"><div class="rank-name">Ascendant</div><div class="rank-issue">Consistency Under Pressure</div><div class="rank-desc">Skill is present but tilt, distraction, and fatigue create large performance swings that hold players below Immortal.</div></div>
+            <div class="rank-card"><div class="rank-name">Immortal · Radiant</div><div class="rank-issue">Marginal Optimization</div><div class="rank-desc">Micro-positioning errors, sub-optimal utility, and info management failures that would not be punished below are exploited mercilessly here.</div></div>
+          </div>
+        `
+      },
+      {
+        id: 'ch14',
+        num: 'Chapter 1.4',
+        title: 'Building a Learning System',
+        body: `
+          <h3 class="sub-title">The Deliberate Practice Framework</h3>
+          <p>Deliberate practice (Anders Ericsson) has five components — all must be present for genuine skill growth:</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Component</div><div class="title">Beyond Current Ability</div><div class="desc">Find the specific sub-skill limiting your performance at your rank. Work on that — not your favorite or most fun skill.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">Component</div><div class="title">Immediate Feedback</div><div class="desc">Aim training gives faster feedback on mechanics than ranked. VOD review gives more accurate feedback on decisions than real-time perception.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">Component</div><div class="title">Specific Errors</div><div class="desc">Not "I had a bad game." Instead: "I was caught off angle three times because I didn't check the corner before pushing."</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">Component</div><div class="title">Repetition for Automaticity</div><div class="desc">A single review or training session doesn't produce change. Change requires sustained repetition across days and weeks.</div></div></li>
+            <li class="num-card"><div class="num">5</div><div><div class="label">Component</div><div class="title">Expert Instruction</div><div class="desc">This encyclopedia, pro coaching communities, coaching content creators substitute for expert coaching. External reference corrects systematic errors you cannot see.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Weekly Structure — 10hrs/week</h3>
+          <div class="schedule">
+            <div class="schedule-head"><strong>Deliberate Practice Template</strong><span>≈ 10 hrs/week</span></div>
+            <div class="schedule-body">
+              <div class="schedule-day"><div class="day-name">Mon</div><div class="day-activity"><strong>Aim training</strong><span>Weakest sub-skill from last VOD review</span></div><div class="day-time">1.5h</div></div>
+              <div class="schedule-day"><div class="day-name">Tue</div><div class="day-activity"><strong>Concept Study</strong><span>Current rank priority volume chapter</span></div><div class="day-time">1h</div></div>
+              <div class="schedule-day"><div class="day-name">Wed–Sat</div><div class="day-activity"><strong>Deliberate Ranked Play</strong><span>Games played with specific focus — not just "try to win"</span></div><div class="day-time">5h total</div></div>
+              <div class="schedule-day"><div class="day-name">Sun</div><div class="day-activity"><strong>VOD Review</strong><span>Review gameplay with rubric, record findings</span></div><div class="day-time">1.5h</div></div>
+              <div class="schedule-day"><div class="day-name">Weekly</div><div class="day-activity"><strong>Review + Recalibrate</strong><span>Assess what worked, set next week's target</span></div><div class="day-time">1h</div></div>
+            </div>
+          </div>
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Optimization Note</div>
+            <p>More games are not more improvement if they're not deliberate. <strong>5 focused ranked games with VOD review will improve you faster than 15 games reviewed never.</strong> Optimize for learning rate, not game count.</p>
+          </div>
+
+          <h3 class="sub-title">Tracking Improvement Accurately</h3>
+          <p>Rank is a poor indicator — a lagging, noisy signal. Track these metrics instead and evaluate on a <strong>30-day checkpoint</strong>, not weekly:</p>
+          <ul>
+            <li>First blood percentage per round</li>
+            <li>Headshot percentage</li>
+            <li>KDA by map</li>
+            <li>Clutch win percentage</li>
+            <li>Economy win rate (eco-round conversions)</li>
+            <li>Utility usage efficiency by agent</li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'II',
+    id: 'vol-ii',
+    kicker: 'Volume II',
+    title: 'Mechanics',
+    overview: 'Every mechanical skill from first principles — the why behind the what, errors by rank, and specific drills. Mechanics are the foundation on which all other skills are built, but not the ceiling of your rank.',
+    chapters: [
+      {
+        id: 'ch21',
+        num: 'Chapter 2.1',
+        title: 'The Physics of Aim',
+        body: `
+          <h3 class="sub-title">The Seven Sub-Skills of Aim</h3>
+          <p>"Aim" is not one skill — it's a composite of seven distinct sub-skills, each with its own training pathway and error profile.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Sub-Skill</div><div class="title">Static Accuracy</div><div class="desc">Hitting a target that is not moving while you are not moving.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">Sub-Skill</div><div class="title">Tracking</div><div class="desc">Following a moving target continuously.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">Sub-Skill</div><div class="title">Flicking</div><div class="desc">Rapidly moving your crosshair to a new target location.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">Sub-Skill</div><div class="title">Micro-Adjustment</div><div class="desc">Fine-tuning crosshair position in real time.</div></div></li>
+            <li class="num-card"><div class="num">5</div><div><div class="label">Sub-Skill · Highest ROI</div><div class="title">Crosshair Placement</div><div class="desc">Positioning your crosshair proactively where an enemy will appear. A player with perfect placement needs only a single click where the enemy walks into their crosshair.</div></div></li>
+            <li class="num-card"><div class="num">6</div><div><div class="label">Sub-Skill</div><div class="title">Click Timing</div><div class="desc">Knowing <em>when</em> — not just <em>where</em> — to click.</div></div></li>
+            <li class="num-card"><div class="num">7</div><div><div class="label">Sub-Skill</div><div class="title">Counter-Strafing</div><div class="desc">Being stationary when you fire — movement discipline.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Mouse Sensitivity</h3>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>eDPI Formula</div>
+            <p><code class="inline">eDPI = mouse DPI × in-game sensitivity</code>. The most successful pro Valorant players cluster between <strong>200–400 eDPI</strong>. Lower sensitivity is generally better for precision aim because it engages larger muscle groups for greater control fidelity.</p>
+          </div>
+          <div class="callout callout-warning">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>One Non-Negotiable</div>
+            <p><strong>Do not vary your sensitivity.</strong> Consistency is worth more than precision optimization. If you change your sense regularly, you are preventing muscle memory formation.</p>
+          </div>
+          <ul>
+            <li>Over-shoots the target → sensitivity too high</li>
+            <li>Can't complete correction before the duel is decided → sensitivity too low</li>
+            <li>Approximately symmetric misses → sense is approximately correct</li>
+          </ul>
+
+          <h3 class="sub-title">Counter-Strafing</h3>
+          <p>Counter-strafing is pressing the opposite directional key briefly while moving to achieve a full stop, restoring first-bullet accuracy. The most common error: counter-strafing too briefly, then firing before the stop is complete. The timing must be confirmed by feel — when the crosshair stops drifting, you are stopped.</p>
+
+          <h3 class="sub-title">Advanced Movement Mechanics</h3>
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect></svg></div><div class="ic-title">Crouching</div><div class="ic-desc">Improves accuracy but telegraphs position. Legitimate uses: close quarters duels, avoiding a pre-aimed enemy, or as a duel extender. Mistake: used predictably, in open space, or during sprint.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div><div class="ic-title">Jiggle-Peeking</div><div class="ic-desc">Briefly peek an angle and retreat to gather information without committing. Baits enemy shots, creates pressure without a fight.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div><div class="ic-title">Wide-Peeking</div><div class="ic-desc">Moving laterally away from corner before pushing, creating a wider angle on the enemy. Counters tight angle holders.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div><div class="ic-title">Shoulder-Peeking</div><div class="ic-desc">Briefly expose shoulder-width without full commitment. Used to bait shots from static defenders.</div></div>
+          </div>
+        `
+      },
+      {
+        id: 'ch22',
+        num: 'Chapter 2.2',
+        title: 'Audio Intelligence',
+        body: `
+          <p>Valorant's audio engine gives precise, real-time information that most players do not use. A player with good audio discipline has something close to a <em>partial radar display</em>.</p>
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"></path></svg></div><div class="ic-title">Footsteps</div><div class="ic-desc">Running is louder and travels further. Walking is quieter. Crouching is near-silent at distance. Direction encoded in stereo panning.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div><div class="ic-title">Ability Sounds</div><div class="ic-desc">Sentinel traps, Sova drones, Omen morphing, Phoenix flashing — each communicates specific info about what the enemy is doing.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></div><div class="ic-title">Reload Sounds</div><div class="ic-desc">If you can hear an enemy reloading, they're in a vulnerable window. Acting on this is one of the most reliable plays in the game.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg></div><div class="ic-title">Spike Sounds</div><div class="ic-desc">The spike beeps at a regular rate once planted. Rate accelerates as timer nears zero. Players with good calibration track time without UI.</div></div>
+          </div>
+          <div class="callout callout-warning">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>The Headphones Imperative</div>
+            <p>Audio intelligence is essentially <strong>non-functional on speakers</strong>. A high-quality stereo or surround headset is a tangible competitive advantage with zero skill requirement — just the right hardware.</p>
+          </div>
+          <h3 class="sub-title">Common Audio Blindspot Errors</h3>
+          <ul>
+            <li>Music drowning out game audio — set Valorant's soundtrack to 0 in ranked</li>
+            <li>Not processing audio under stress — passive hearing vs. active listening</li>
+            <li>Failing to call out enemy footstep audio to teammates</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch23',
+        num: 'Chapter 2.3',
+        title: 'Clicking: The Science of',
+        titleAccent: 'Firing Discipline',
+        body: `
+          <h3 class="sub-title">Shot Timing vs. Shot Placement</h3>
+          <div class="compare">
+            <div>
+              <div class="compare-title bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Shot Timing Errors</div>
+              <ul><li>Fire while still moving</li><li>Fire during spray recovery</li><li>Fire burst before mini-recovery completes</li></ul>
+            </div>
+            <div>
+              <div class="compare-title bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>Shot Placement Errors</div>
+              <ul><li>Crosshair not at head height</li><li>Flick undershoots or overshoots</li><li>Target moves, crosshair doesn't track</li></ul>
+            </div>
+          </div>
+
+          <h3 class="sub-title">The First Bullet Accuracy Principle</h3>
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>Bullseye Principle</div>
+            <p>Every weapon has <strong>maximum first-bullet accuracy when stationary</strong>. In medium-to-long range duels, prioritize the first shot above all else. Tap-firing is not just for rifles — even automatic weapons have lower spread on isolated first bullets.</p>
+          </div>
+          <p>The common error is impatience — firing before fully stopping. Waiting the fraction of a second produces better hit probability than firing immediately.</p>
+        `
+      },
+      {
+        id: 'ch24',
+        num: 'Chapter 2.4',
+        title: 'Mechanics Curriculum',
+        titleAccent: 'By Rank',
+        body: `
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-name">Iron · Bronze</div><div class="rank-issue">Priority Focus</div><div class="rank-desc">1) Crosshair placement at head height while moving — single highest-impact change. 2) Stop before shooting — brief deliberate pause before every shot. 3) Don't hold trigger — fire one, assess, then decide.</div></div>
+            <div class="rank-card"><div class="rank-name">Silver · Gold</div><div class="rank-issue">Priority Focus</div><div class="rank-desc">1) Counter-strafe technique must become automatic. 2) Burst fire discipline — learn correct burst length per weapon per range. 3) Spray control on primaries — compensation pull in custom games first.</div></div>
+            <div class="rank-card"><div class="rank-name">Platinum · Diamond</div><div class="rank-issue">Priority Focus</div><div class="rank-desc">1) Click timing precision — mechanical ceiling is whether click lands on exact frame of full stop. 2) Duel-specific mechanics — engineer practice for your specific loss scenarios. 3) Off-hand comfort.</div></div>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'III',
+    id: 'vol-iii',
+    kicker: 'Volume III',
+    title: 'Tactical Valorant',
+    overview: 'Tactics concern how individual and small-group actions are coordinated within a round to achieve a round-winning outcome. A team of mechanically superior players that plays poor tactics will lose to a team of average players that coordinates well.',
+    chapters: [
+      {
+        id: 'ch31',
+        num: 'Chapter 3.1',
+        title: 'Positioning Principles',
+        body: `
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>Good Position</div>
+            <p>A good position has multiple lines of cover or escape, can hear/see enemies before they can engage, is <strong>not exposed to more than one angle simultaneously</strong>, and has information-gathering value without requiring a fight.</p>
+          </div>
+
+          <h3 class="sub-title">The Angles Doctrine</h3>
+          <div class="callout callout-warning">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>Fundamental Principle</div>
+            <p><strong>Never hold more than one angle at once</strong> if you can avoid it. This is called <em>single-angle isolation</em>. The technique: playing off the wall — stand closer to the wall on the side of the angle you are not watching.</p>
+          </div>
+
+          <h3 class="sub-title">The Trading Trap</h3>
+          <p>A team that plays to trade kills plays to <strong>break even, not win rounds</strong>. Every trade is net-zero in kills but net-negative in positional value and potentially economy.</p>
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Alternative</div>
+            <p>Play to <strong>avoid the first death</strong> on your team, not to avenge it. If positioning prevents the enemy from getting first kill, you don't need to worry about the trade.</p>
+          </div>
+
+          <h3 class="sub-title">Position Priority Hierarchy</h3>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Highest Priority</div><div class="title">Information Position</div><div class="desc">Gather intel about enemy position without taking a fight.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">Priority</div><div class="title">Delay Position</div><div class="desc">Slow enemy progress without taking an unfavorable fight.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">Priority</div><div class="title">Contest Position</div><div class="desc">Fight one enemy at a time with clear cover — only when higher priorities aren't possible.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">Fallback</div><div class="title">Last-Resort Position</div><div class="desc">Fallback that protects the objective (site, spike, flank) even if all else fails.</div></div></li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch32',
+        num: 'Chapter 3.2',
+        title: 'Attack-Side Tactics',
+        body: `
+          <h3 class="sub-title">The Execute Framework</h3>
+          <h4 class="subsub-title">Common Execute Failures</h4>
+          <ul>
+            <li><strong>Staggered utility</strong> — deployed at different times, giving defenders windows between pieces</li>
+            <li><strong>No designated entry</strong> — everyone waits, the utility expires</li>
+            <li><strong>Planting in the wrong location</strong> — without considering active retake angles</li>
+            <li><strong>Failure to clear all angles before planting</strong></li>
+          </ul>
+
+          <h3 class="sub-title">Default Attacks</h3>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Mental Model</div>
+            <p>A default is a question: <em>"Where are you?"</em> The team sends probes — and reads the answer. If stacked A — attack B. If stacked B — attack A. If ambiguous — force a decision with mid-round threat.</p>
+          </div>
+          <p>Defaults are <strong>underrated and underused below Platinum</strong>. They require communication and patience higher than most teams can sustain.</p>
+
+          <h3 class="sub-title">Lurking</h3>
+          <p>A lurker applies flank pressure while the main team pushes. The defender must solve a two-front problem — this is the principle of <em>multi-front pressure</em>. Optimal lurk timing: synchronized with when the execute creates pressure — not before, not after.</p>
+        `
+      },
+      {
+        id: 'ch33',
+        num: 'Chapter 3.3',
+        title: 'Defense-Side Tactics',
+        body: `
+          <h3 class="sub-title">The Information Economy of Defense</h3>
+          <div class="time-timeline">
+            <div class="time-row"><div class="time-stamp">1:00+</div><div class="time-body"><strong>Max Info Advantage</strong><p>Defenders hold positions selected pre-round, attackers approaching. Sound gives early reads.</p></div></div>
+            <div class="time-row"><div class="time-stamp">0:40</div><div class="time-body"><strong>Roughly Neutral</strong><p>Both teams made contact, some rotations happened.</p></div></div>
+            <div class="time-row"><div class="time-stamp">&lt;0:20</div><div class="time-body"><strong>Commit or Reset</strong><p>Attackers committed or resetting for late push. Defensive reads less reliable.</p></div></div>
+          </div>
+
+          <h3 class="sub-title">Anchor and Rotate</h3>
+          <ul>
+            <li><strong>Anchor job is not to prevent all attackers from entering</strong> — it is to delay entry long enough for rotators to arrive</li>
+            <li>Anchors buy time — must have fallback routes reachable under pressure</li>
+            <li><strong>Rotate on confirmed information</strong>, not suspicion — early rotates leave original site vulnerable</li>
+            <li>Confirmed execute is the signal to rotate</li>
+          </ul>
+
+          <h3 class="sub-title">Post-Plant Defense</h3>
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Highest Leverage Scenario</div>
+            <p><strong>Identify site from multiple angles simultaneously</strong> — crossfires are nearly impossible to manage for post-plant defenders. <strong>Prioritize defuse safety over kill count</strong> — the objective is touching the spike, not winning the fight. Know the spike timer: 45 seconds feels long and is not.</p>
+          </div>
+        `
+      },
+      {
+        id: 'ch34',
+        num: 'Chapter 3.4',
+        title: 'The Clutch Framework',
+        body: `
+          <div class="callout callout-warning">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>Most Clutch Losses</div>
+            <p>Happen because the lone player takes a fight immediately after the team wipes — gifting perfect information to the enemy.</p>
+          </div>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Protocol</div><div class="title">Find Hidden Position</div><div class="desc">Reset to an unexpected location immediately.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">Protocol</div><div class="title">Wait and Listen</div><div class="desc">Let enemy make noise trying to locate you. Gather audio info: footsteps count, direction, speed.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">Protocol</div><div class="title">Force Separation</div><div class="desc">If enemies are together, they beat you every time. Make them split by forcing two-side retake or creating uncertainty.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">Protocol</div><div class="title">Pick Isolated Player First</div><div class="desc">The moment one enemy is separated — that is your engagement.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Clutch Mental Checklist</h3>
+          <p>Develop a fixed mental routine you run automatically in every clutch:</p>
+          <ul>
+            <li>Stop and breathe — 1–2 seconds deliberate pause</li>
+            <li>Ask: where can they be?</li>
+            <li>Ask: where am I relative to the spike?</li>
+            <li>Ask: what do I hear?</li>
+            <li>Commit to a plan and execute</li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'IV',
+    id: 'vol-iv',
+    kicker: 'Volume IV',
+    title: 'Strategic Valorant',
+    overview: 'Strategy operates at the scale of the match — across all rounds, both sides, adapting to opponent patterns over time. Strategic thinking separates Diamond from Immortal and Immortal from Radiant.',
+    chapters: [
+      {
+        id: 'ch41',
+        num: 'Chapter 4.1',
+        title: 'Economy Management',
+        body: `
+          <h3 class="sub-title">The Credit System</h3>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12M15 9.5c0-1.38-1.34-2.5-3-2.5s-3 1.12-3 2.5 1.34 2.5 3 2.5 3 1.12 3 2.5-1.34 2.5-3 2.5"></path></svg>Credit Allocation</div>
+            <p>Each round's credits depend on: carry-over, kill bonus (200/kill), <strong>loss bonus (800–2,900 on sliding scale)</strong>, win bonus (3,000), and spike plant bonus (300). The escalating loss bonus creates strategic depth — a losing team may have credits to full-buy while the winning team is on half-buy.</p>
+          </div>
+
+          <h3 class="sub-title">The Five Economic States</h3>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">State</div><div class="title">Full Buy</div><div class="desc">Everyone has preferred weapon + full shields. Execute game plan.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">State</div><div class="title">Half Buy</div><div class="desc">Some full, some not. Avoid straight-up gunfights. Play slower, use utility, pick off isolated.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">State</div><div class="title">Force Buy</div><div class="desc">Meaningful credits but not full. Accepted at disadvantageous odds because losing another eco round is worse.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">State</div><div class="title">Eco</div><div class="desc">Intentionally minimal spend to bank for future. Take kills with minimum equipment, apply pressure without losing rifles.</div></div></li>
+            <li class="num-card"><div class="num">5</div><div><div class="label">State · Most Sophisticated</div><div class="title">Bonus Eco</div><div class="desc">Full credits from loss bonuses but intentionally limited buy to save for future super-buy.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Economy Mistakes That Determine Matches</h3>
+          <ul>
+            <li><strong>Solo buying when team is ecoing</strong> — four on eco with one full-buy loses regardless</li>
+            <li><strong>Not dropping weapons for teammates</strong> — high-value coordination skill</li>
+            <li><strong>Spending on ability charges instead of weapons</strong> — the weapon is almost always higher ROI on tight credits</li>
+            <li><strong>Not recognizing opponent's eco round</strong> — failing to adjust offense against pistols costs rounds</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch42',
+        num: 'Chapter 4.2',
+        title: 'Reading the Match',
+        body: `
+          <p>Strategic players read opponent patterns across multiple rounds and adapt. By halftime, you should be able to predict with reasonable accuracy whether the next round is opponent eco, half-buy, or full buy — and adjust aggression accordingly.</p>
+          <h3 class="sub-title">Track opponent economy by:</h3>
+          <ul>
+            <li>Observing weapons from deaths</li>
+            <li>Tracking loss streak</li>
+            <li>Tracking buy history</li>
+          </ul>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path></svg>Pattern Recognition</div>
+            <p>Three data points give you a <strong>reliable prediction model</strong>. Use it to decide: aggressive vs. conservative opening, force-buy timing, and when to fake rotations.</p>
+          </div>
+        `
+      },
+      {
+        id: 'ch43',
+        num: 'Chapter 4.3',
+        title: 'Utility Synergy and',
+        titleAccent: 'Pacing',
+        body: `
+          <h3 class="sub-title">Utility Pacing Across the Round</h3>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">E</div><div><div class="label">Early Round</div><div class="title">Information Gathering</div><div class="desc">Drone, dart, camera. Minimal commitment.</div></div></li>
+            <li class="num-card"><div class="num">M</div><div><div class="label">Mid Round</div><div class="title">Space Control</div><div class="desc">Smokes, walls, trip wires. Establish or deny access to contested areas.</div></div></li>
+            <li class="num-card"><div class="num">L</div><div><div class="label">Late Round</div><div class="title">Combat Utility</div><div class="desc">Flashes, concusses, orbital, grenades. Used only when fight is confirmed.</div></div></li>
+          </ul>
+          <div class="callout callout-warning">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>Common Mistake</div>
+            <p>Using combat utility in early round <strong>before a fight is confirmed</strong> — players who flash in empty corridors burn resources needed when the fight happens.</p>
+          </div>
+
+          <h3 class="sub-title">Ultimate Pacing</h3>
+          <div class="compare">
+            <div>
+              <div class="compare-title good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Use When</div>
+              <ul><li>Economically important rounds</li><li>Opponent hasn't shown specific counter-play</li><li>Situation requires tool no other ability provides</li></ul>
+            </div>
+            <div>
+              <div class="compare-title bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>Don't Use When</div>
+              <ul><li>On eco rounds with pistols only</li><li>No info and ult needs info</li><li>Already winning round comfortably</li></ul>
+            </div>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'V',
+    id: 'vol-v',
+    kicker: 'Volume V',
+    title: 'Agent Mastery',
+    overview: 'Agent mastery is not about knowing your agent\'s kit — every Iron player knows what their abilities do. It\'s about understanding when, why, and how each ability creates value relative to the game state.',
+    chapters: [
+      {
+        id: 'ch51',
+        num: 'Chapter 5.1',
+        title: 'Agent Role Framework',
+        body: `
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-name">Duelists</div><div class="rank-issue">Jett · Reyna · Neon · Phoenix · Yoru · ISO</div><div class="rank-desc">Self-sufficient aggressive kits. Contract: win more duels than anyone else. A duelist who plays passive or chases KDA is failing the role.</div></div>
+            <div class="rank-card"><div class="rank-name">Initiators</div><div class="rank-issue">Sova · Breach · Gekko · Fade · KAY/O</div><div class="rank-desc">Recon and disruption kits. Contract: provide info/disruption that makes team executes possible. Not deploying for duelist setup = failure.</div></div>
+            <div class="rank-card"><div class="rank-name">Controllers</div><div class="rank-issue">Brimstone · Omen · Harbor · Viper · Astra · Clove</div><div class="rank-desc">Vision and area manipulation. Contract: responsible for every smoke in every execute. Team executes without smokes = failure.</div></div>
+            <div class="rank-card"><div class="rank-name">Sentinels</div><div class="rank-issue">Cypher · Killjoy · Sage · Chamber · Deadlock</div><div class="rank-desc">Information and site-hold kits. Contract: enable 4v5 on parts of the map. If flanks are killing team = failure.</div></div>
+          </div>
+        `
+      },
+      {
+        id: 'ch52',
+        num: 'Chapter 5.2',
+        title: 'Jett — The Mobility Duelist',
+        body: `
+          <p>Jett is purpose-built for two functions: <strong>reach unexpected angles</strong> and <strong>escape immediately after engaging</strong>. She is the application of aggression, not defense.</p>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>Core Loop</div>
+            <p><strong>Hold an angle → win the first duel → dash away</strong> before the enemy team can retaliate. Every Jett player should execute this consistently.</p>
+          </div>
+          <h3 class="sub-title">Common Mistakes by Rank</h3>
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-name">Iron · Bronze</div><div class="rank-issue">Reactive Tailwind</div><div class="rank-desc">Using dash as escape after being shot — by then you're dead. Dash must be pre-committed to anticipated reposition.</div></div>
+            <div class="rank-card"><div class="rank-name">Silver · Gold</div><div class="rank-issue">Never Using Updraft in Combat</div><div class="rank-desc">Updraft has vertical reposition value, duel-extension value (harder target), and angle variation value (height most placements miss).</div></div>
+            <div class="rank-card"><div class="rank-name">Plat · Diamond</div><div class="rank-issue">Passive on Non-Execute Team</div><div class="rank-desc">Wasted pick on team not executing. If team runs defaults, consider second sentinel.</div></div>
+            <div class="rank-card"><div class="rank-name">Immortal+</div><div class="rank-issue">Baited Tailwind Usage</div><div class="rank-desc">Opponents bait dash with near-miss pressure. Learn to distinguish genuine threats from bait designed to burn mobility.</div></div>
+          </div>
+        `
+      },
+      {
+        id: 'ch53',
+        num: 'Chapter 5.3',
+        title: 'Sova — The Information Machine',
+        body: `
+          <p>Sova's design philosophy: perfect information converts into round wins <strong>without requiring superior mechanics</strong>. If you know exactly where all five enemies are, your team wins almost all fights.</p>
+          <h3 class="sub-title">The Sova Imperative: Lineups</h3>
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Investment</div>
+            <p>Sova mastery requires upfront investment in <strong>5–10 consistent lineups per site per map</strong>. No shortcut.</p>
+          </div>
+          <ul>
+            <li><strong>Post-plant lineups</strong> — Shock Bolts hitting spike from safe positions</li>
+            <li><strong>Round-start info</strong> — Recon Bolts revealing lurk/stack positions immediately</li>
+            <li><strong>Execute setup</strong> — Recon Bolts revealing defender positions before execute</li>
+          </ul>
+          <h3 class="sub-title">Common Mistakes</h3>
+          <ul>
+            <li><strong>Silver–Gold</strong>: Not learning lineups — playing Sova without lineups uses kit at a fraction of value</li>
+            <li><strong>Plat–Diamond</strong>: Using drone for self not team. Fly, verbally call everything. Silence wastes it.</li>
+            <li><strong>All ranks</strong>: Wasting Hunter's Fury into empty space. Fire only on confirmed information.</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch54',
+        num: 'Chapter 5.4',
+        title: 'Killjoy — The Sentinel Anchor',
+        body: `
+          <p>Killjoy is a force multiplier — optimal ability placement converts a 4v5 into ~4.7v5. She is not primarily a fragger.</p>
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><circle cx="12" cy="12" r="10"></circle></svg></div><div class="ic-title">Turret</div><div class="ic-desc">Cover an angle KJ can't simultaneously watch. Not at obvious pre-fire spots. Audio info before visual range.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"></rect><circle cx="12" cy="12" r="2"></circle></svg></div><div class="ic-title">Alarmbot</div><div class="ic-desc">Cover approach KJ isn't watching. Tucked corners forcing detours. Alarmbot+Turret combo = guaranteed damage.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div><div class="ic-title">Nanoswarm</div><div class="ic-desc">Highest value: post-plant — placed at spike location before plant, activated after. Defenders must clear or die during defuse.</div></div>
+          </div>
+        `
+      },
+      {
+        id: 'ch55',
+        num: 'Chapter 5.5',
+        title: 'Omen — The Psychological Controller',
+        body: `
+          <p>Omen creates uncertainty — making opponent question <em>where he is</em> and <em>where he'll appear</em>. Unlike Brimstone (predictable), Omen uses vision denial and psychological pressure.</p>
+          <h3 class="sub-title">Smoke Protocol</h3>
+          <ul>
+            <li><strong>Smoke at the last moment</strong> — global and on-demand means no pre-smoking at round start. Maximizes timer during engagement window.</li>
+            <li><strong>Smoke defender's safety positions, not choke points</strong> — smoking choke slows both sides. Smoke the corner behind choke where defenders stand — deny vision, push through freely.</li>
+            <li><strong>Use global smokes to fake rotations</strong> — smoke B entrance as if executing B. Draws rotators away from actual target.</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch56',
+        num: 'Chapter 5.6',
+        title: 'Reyna — The Solo Carry Vehicle',
+        body: `
+          <p>Purest mechanical test agent — self-healing, self-invulnerability, self-flash — with <strong>zero team utility</strong>. When mechanically dominant: snowball. When peer-matched: contributes almost nothing.</p>
+          <h3 class="sub-title">Leer (Flash) Protocol</h3>
+          <ul>
+            <li>Deploy eye around corner — not where enemy can immediately shoot it on appearance</li>
+            <li>Time emergence so you're pushing simultaneously — flash stuns, you push through blind window</li>
+            <li>Don't use from safe position and wait for shot — telegraphs timing and allows enemies to regroup</li>
+          </ul>
+          <h3 class="sub-title">Common Mistakes</h3>
+          <ul>
+            <li><strong>Iron–Gold</strong>: Using Devour during gunfights. Takes Reyna entirely out of the fight — use only between fights.</li>
+            <li><strong>All ranks</strong>: Playing on teams that need structure. Reyna cannot gather info, smoke, or anchor — adds chaos to chaos.</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch57',
+        num: 'Chapter 5.7',
+        title: 'Agent Selection Framework',
+        body: `
+          <h3 class="sub-title">Selection Decision Hierarchy</h3>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Priority</div><div class="title">What Does Team Need?</div><div class="desc">If no one chose controller — choose controller. Filling gaps is more valuable than playing preferred.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">Priority</div><div class="title">What Does Map Favor?</div><div class="desc">Viper on long-corridor maps (Pearl, Breeze). Sage on single-chokepoint maps (Icebox A, Haven C).</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">Priority</div><div class="title">Depth of Knowledge?</div><div class="desc">Agent at 20% proficiency &lt; solid agent at 80%. Don't instalock new agent in competitive.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">Priority</div><div class="title">Enemy Composition?</div><div class="desc">Breach/KAY/O vs. ability-heavy. Viper vs. smoke-dependent executes.</div></div></li>
+          </ul>
+          <h3 class="sub-title">Optimal Agent Pool</h3>
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 8 22 9 17 14 18 21 12 18 6 21 7 14 2 9 9 8 12 2"></polygon></svg></div><div class="ic-title">Primary</div><div class="ic-desc">Most comfortable role — mastery level.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg></div><div class="ic-title">Secondary</div><div class="ic-desc">Different role — competent level for when primary is filled.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8M12 8v8"></path></svg></div><div class="ic-title">Flexible</div><div class="ic-desc">Any role — functional level for edge cases.</div></div>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'VI',
+    id: 'vol-vi',
+    kicker: 'Volume VI',
+    title: 'Map Mastery',
+    overview: 'Map knowledge is the fixed advantage — unlike aim or game sense, which fluctuate with mental state, map knowledge is static and always available.',
+    chapters: [
+      {
+        id: 'ch61',
+        num: 'Chapter 6.1',
+        title: 'The Map Knowledge Hierarchy',
+        body: `
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">L1</div><div><div class="label">Level</div><div class="title">Callout Knowledge</div><div class="desc">Knowing what every area is called. Enables communication — without it, position info cannot be transmitted precisely.</div></div></li>
+            <li class="num-card"><div class="num">L2</div><div><div class="label">Level</div><div class="title">Route Knowledge</div><div class="desc">Every path from every spawn to every key location — including timing, alternatives, flanks.</div></div></li>
+            <li class="num-card"><div class="num">L3</div><div><div class="label">Level</div><div class="title">Angle Knowledge</div><div class="desc">Every location from which enemy can appear at every position — enables proactive crosshair placement.</div></div></li>
+            <li class="num-card"><div class="num">L4</div><div><div class="label">Level</div><div class="title">Utility Knowledge</div><div class="desc">Every meaningful ability placement — smokes, lineups, sentinel setups, Sage walls.</div></div></li>
+            <li class="num-card"><div class="num">L5</div><div><div class="label">Level</div><div class="title">Dynamic Knowledge</div><div class="desc">How the map changes based on round state — which areas contested mid-round, where rotators appear, how plant location shifts sightlines.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Systematic Map Learning — 5 Steps</h3>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">S1</div><div><div class="title">Custom Walk-Through (1 session)</div><div class="desc">Walk every corridor, route, site, corner. Identify callouts using reference map.</div></div></li>
+            <li class="num-card"><div class="num">S2</div><div><div class="title">Angle Hunting (2–3 sessions)</div><div class="desc">Walk standard routes, stop at every corner, identify: where can an enemy be? How many separate angles must I check?</div></div></li>
+            <li class="num-card"><div class="num">S3</div><div><div class="title">Utility Exploration (2–3/agent)</div><div class="desc">Learn agent-specific utility — Recon Bolts lineups, optimal smokes, trip wire setups.</div></div></li>
+            <li class="num-card"><div class="num">S4</div><div><div class="title">Live Application (ongoing)</div><div class="desc">Play rounds with explicit focus on one map element per session — routes, then angles, then utility.</div></div></li>
+            <li class="num-card"><div class="num">S5</div><div><div class="title">VOD Review (ongoing)</div><div class="desc">Review deaths specifically for map knowledge failure: "Did I die because I didn't know enemy could be there?"</div></div></li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch62',
+        num: 'Chapter 6.2',
+        title: 'Core Map-by-Map Analysis',
+        body: `
+          <h3 class="sub-title">Ascent — The Balanced Paradigm</h3>
+          <p>Symmetrical site distances and well-developed mid (mid-market, catwalk) create legitimate strategic depth. The team controlling mid accesses B market, garden, catwalk. Dominant Ascent attack starts with mid-control phase before committing. A-side anchor must be careful of A-main/catwalk two-angle problem — single defender vulnerable to split.</p>
+
+          <h3 class="sub-title">Haven — The Three-Site Problem</h3>
+          <p>Unique three sites (A, B, C) — fundamentally different defensive problem. Standard: 2 on A, 1 on B, 2 on C. B perpetually single-defended — most vulnerable to coordinated three-player execute. Sophisticated Haven attack: B pressure draws resources to B → C execute using resources drawn away. C-to-A rotations are longest on any standard map.</p>
+
+          <h3 class="sub-title">Bind — The Teleporter Factor</h3>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line></svg>Information Trade</div>
+            <p>Teleporters create audible arrival — <strong>never "free."</strong> You gain position but reveal rotation happened. Sophisticated Bind play: use teleport sound as <em>disinformation</em> — teleport to fake rotation while still pushing original site.</p>
+          </div>
+
+          <h3 class="sub-title">Icebox — Vertical Dimension</h3>
+          <p>Most vertically complex map — A has elevated Boiler overlooking main. Teams on single vertical level consistently lose. Before any execute: must clear/suppress elevated positions. Skipping Boiler on A or Green/Orange on B "to save time" costs more than the skip saved.</p>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'VII',
+    id: 'vol-vii',
+    kicker: 'Volume VII',
+    title: 'Learning Science',
+    overview: 'Understanding how skill is actually acquired — not how we intuitively believe it is — produces radically different practice strategies.',
+    chapters: [
+      {
+        id: 'ch71',
+        num: 'Chapter 7.1',
+        title: 'Motor Learning and',
+        titleAccent: 'Muscle Memory',
+        body: `
+          <p>"Muscle memory" is <em>motor procedural memory</em> — stored in the cerebellum and basal ganglia, not declarative memory systems.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">①</div><div><div class="label">Principle</div><div class="title">Repetition, Not Instruction</div><div class="desc">Reading about counter-strafing does not produce motor memory — performing thousands of times does. Instruction accelerates understanding; repetition produces capability.</div></div></li>
+            <li class="num-card"><div class="num">②</div><div><div class="label">Principle</div><div class="title">Context-Dependent</div><div class="desc">Motor memory acquired in training partially transfers to in-game — but not perfectly. Why pure aim training without application has diminishing returns.</div></div></li>
+            <li class="num-card"><div class="num">③</div><div><div class="label">Principle</div><div class="title">Durable but Malleable</div><div class="desc">Once formed, motor patterns resist erasure but can be updated. Why changing sensitivity is so costly — you're unlearning an old sense.</div></div></li>
+            <li class="num-card"><div class="num">④</div><div><div class="label">Principle · Research-Backed</div><div class="title">Consolidation During Sleep</div><div class="desc">Motor memories consolidate during sleep. Practice immediately before sleep, or ensure adequate sleep between intensive sessions. Not preference — evidence.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">The Spacing Effect</h3>
+          <p>Learning is more durable when practice is <strong>distributed over time</strong> rather than massed. Five 30-minute sessions across five days produce better retention than one 2.5-hour session.</p>
+
+          <h3 class="sub-title">Interleaving vs. Blocked Practice</h3>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>Counterintuitive Truth</div>
+            <p><strong>Interleaved practice</strong> (alternating skills) produces better long-term retention than blocked — even though it feels harder and produces worse performance during the session. For aim training: alternate 10-minute flick and tracking blocks instead of 30+30.</p>
+          </div>
+
+          <h3 class="sub-title">Desirable Difficulties</h3>
+          <p>Learning conditions that slow acquisition but enhance long-term retention: spacing, interleaving, retrieval practice, variability. Deathmatch (variable, unpredictable targets) is a desirable difficulty vs. bots (predictable, static) — deathmatch performance is worse but transfers better.</p>
+        `
+      },
+      {
+        id: 'ch72',
+        num: 'Chapter 7.2',
+        title: 'Feedback Loops',
+        body: `
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg></div><div class="ic-title">Intrinsic Feedback</div><div class="ic-desc">From your own senses — proprioception, visual tracking, feel of the counter-strafe. Always present but can be inaccurate.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line></svg></div><div class="ic-title">Augmented Feedback</div><div class="ic-desc">Added externally — VOD review, coaching, stats tools. More accurate than intrinsic but delayed.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"></path><path d="M2 12h20"></path></svg></div><div class="ic-title">Concurrent Feedback</div><div class="ic-desc">Provided during execution — like visual recoil indicator. Can improve immediate performance but create dependency.</div></div>
+          </div>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path></svg>VOD Review</div>
+            <p><strong>Most powerful available augmented feedback</strong>. The gap between how decisions feel in the moment and how they look on review is one of the most striking experiences for anyone watching themselves seriously for the first time.</p>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'VIII',
+    id: 'vol-viii',
+    kicker: 'Volume VIII',
+    title: 'VOD Analysis Engine',
+    overview: 'A structured methodology for extracting maximum learning from your own gameplay footage — the single most impactful improvement tool available.',
+    chapters: [
+      {
+        id: 'ch82',
+        num: 'Chapter 8.2',
+        title: 'The Radiant-Level',
+        titleAccent: 'VOD Rubric',
+        body: `
+          <p>Evaluate play across six dimensions on a 1–5 scale for every reviewed round:</p>
+          <h3 class="sub-title">Dimension 1 — Positioning</h3>
+          <table class="rubric">
+            <thead><tr><th>Score</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td class="score-cell">1</td><td>Exposes you to multiple simultaneous angles; no cover or fallback</td></tr>
+              <tr><td class="score-cell">2</td><td>Single-angle but without rotator angle consideration</td></tr>
+              <tr><td class="score-cell">3</td><td>Generally single-angle with cover; occasional multi-angle</td></tr>
+              <tr><td class="score-cell">4</td><td>Consistently single-angle with fallback; rotates on info</td></tr>
+              <tr><td class="score-cell">5</td><td>Optimal positions per role/phase; creates crossfires; gathers info with minimal risk</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="sub-title">Dimension 2 — Utility</h3>
+          <table class="rubric">
+            <thead><tr><th>Score</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td class="score-cell">1</td><td>Reactive with no coordination; wasted; ultimates on irrelevant rounds</td></tr>
+              <tr><td class="score-cell">2</td><td>Proactive but sub-optimal; some coordination</td></tr>
+              <tr><td class="score-cell">3</td><td>Appropriate timing; basic lineups; minor inefficiencies</td></tr>
+              <tr><td class="score-cell">4</td><td>Consistently deployed on time, coordinated, near-optimal</td></tr>
+              <tr><td class="score-cell">5</td><td>Creates compounding advantages; combinations executed; info communicated immediately</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="sub-title">Dimension 3 — Crosshair</h3>
+          <table class="rubric">
+            <thead><tr><th>Score</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td class="score-cell">1</td><td>Below head height; staring at floor/wall/neutral space</td></tr>
+              <tr><td class="score-cell">2</td><td>At head height in obvious locations only</td></tr>
+              <tr><td class="score-cell">3</td><td>Generally at head height; pre-aims common angles</td></tr>
+              <tr><td class="score-cell">4</td><td>Nearly always at head height including complex angles</td></tr>
+              <tr><td class="score-cell">5</td><td>Automatic head-height on all angles including transitional positions</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="sub-title">Dimensions 4–6</h3>
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-name">D4 — Fight Selection</div><div class="rank-desc">Only take fights where you have earned advantage. Recognize trade/avoid/force moments perfectly. Consistent with agent kit.</div></div>
+            <div class="rank-card"><div class="rank-name">D5 — Communication</div><div class="rank-desc">Real-time callout of relevant info. Coordinate rotations verbally. Communicate patterns. Direct team strategy clearly and concisely.</div></div>
+            <div class="rank-card"><div class="rank-name">D6 — Win Condition</div><div class="rank-desc">Perfect match-state awareness at all times. Decisions reference win condition. Exploit patterns. Adjust at halftime.</div></div>
+          </div>
+        `
+      },
+      {
+        id: 'ch83',
+        num: 'Chapter 8.3',
+        title: 'VOD Review Protocol',
+        body: `
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">S1</div><div><div class="title">Select Review Target</div><div class="desc">Preventable loss · Round played wrong but escaped · Recurring situation (clutches, eco, B-defense).</div></div></li>
+            <li class="num-card"><div class="num">S2</div><div><div class="title">Identify 3–5 Significant Errors</div><div class="desc">Score each dimension across 3–5 rounds using rubric. Note which dimension consistently lowest.</div></div></li>
+            <li class="num-card"><div class="num">S3</div><div><div class="title">Drill Into Lowest Dimension</div><div class="desc">For each death: pause before error. Ask: "Correct action here?" Compare to actual. Identify specific decision failure.</div></div></li>
+            <li class="num-card"><div class="num">S4</div><div><div class="title">Produce Practice Agenda</div><div class="desc">Write 1–2 specific practice goals. Not "play better" — "check left corner before entering A main" or "counter-strafe before 4th shot in sustained duel."</div></div></li>
+            <li class="num-card"><div class="num">S5</div><div><div class="title">Review in 3 Sessions</div><div class="desc">Check if error repeats in next three sessions. If yes: change practice agenda. If no: move to next priority.</div></div></li>
+          </ul>
+          <div class="callout callout-warning">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>Critical Mistake</div>
+            <p><strong>Self-flagellation ≠ analysis.</strong> "I'm so bad" is not an insight. "I held wrong angle because I had no information and should have played for information first" is an insight. Keep review analytical.</p>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'IX',
+    id: 'vol-ix',
+    kicker: 'Volume IX',
+    title: 'Mental Performance',
+    overview: 'Mental performance is the discipline of ensuring psychological and physiological state enables — rather than sabotages — your mechanical and tactical ability.',
+    chapters: [
+      {
+        id: 'ch91',
+        num: 'Chapter 9.1',
+        title: 'The Tilt Problem',
+        body: `
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path></svg>Tilt ≠ Anger</div>
+            <p>Tilt is a <strong>performance state</strong> characterized by narrowed attention, degraded decision-making (reduced working memory), and heightened emotional reactivity.</p>
+          </div>
+
+          <h3 class="sub-title">Tilt Triggers</h3>
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-name">External</div><div class="rank-issue">From Environment</div><div class="rank-desc">Teammate feeding/blame/non-comm. Perceived unfair outcomes (RNG). Consecutive losses. Near-promotion-missed scenarios.</div></div>
+            <div class="rank-card"><div class="rank-name">Internal</div><div class="rank-issue">From Self</div><div class="rank-desc">Personal mechanical errors (missed "should-makes"). Failing practiced skills. Feeling like improvement is too slow.</div></div>
+            <div class="rank-card"><div class="rank-name">Physiological</div><div class="rank-issue">From Body</div><div class="rank-desc">Hungry/dehydrated/tired. Post-stressful external event (work/relationship). Sessions over 2–3h without adequate breaks.</div></div>
+          </div>
+
+          <h3 class="sub-title">Management Protocols</h3>
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div><div class="ic-title">Pre-Round Routine</div><div class="ic-desc">10–15 second grounding: slow 4-4-4 breath, single focus phrase ("check angles"), physical reset. Consistency matters more than specific content.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg></div><div class="ic-title">Mid-Game Recognition</div><div class="ic-desc">Recognize tilt signature: negative self-talk, holding trigger, peaking bad angles, team-chat typing during round. Interrupt before next round.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line></svg></div><div class="ic-title">Post-Tilt Recovery</div><div class="ic-desc">5-min break between rounds. Water. Play next 3 for specific skill only — not for rank. If persists: stop session entirely.</div></div>
+          </div>
+
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Stop Condition</div>
+            <p><strong>Playing on tilt compounds damage</strong> — RR losses, reinforced bad habits, negative Valorant-feeling association. Stopped session costing two losses &lt; tilted four-game costing six.</p>
+          </div>
+        `
+      },
+      {
+        id: 'ch92',
+        num: 'Chapter 9.2',
+        title: 'Consistency &',
+        titleAccent: 'Performance Psychology',
+        body: `
+          <h3 class="sub-title">The Performance State</h3>
+          <div class="compare">
+            <div>
+              <div class="compare-title good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Facilitates</div>
+              <ul><li>Physical readiness (sleep, hydration, nutrition)</li><li>Pre-session warm-up</li><li>Clear specific focus intention</li><li>Distraction removal</li></ul>
+            </div>
+            <div>
+              <div class="compare-title bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>Inhibits</div>
+              <ul><li>Fatigue, hunger, dehydration</li><li>Background stressors</li><li>Ambiguous goals ("just for fun")</li><li>External distractions (phone)</li></ul>
+            </div>
+          </div>
+
+          <h3 class="sub-title">Recommended Warm-Up Sequence</h3>
+          <div class="schedule">
+            <div class="schedule-head"><strong>Warm-Up Protocol</strong><span>≈ 25 min</span></div>
+            <div class="schedule-body">
+              <div class="schedule-day"><div class="day-name">5 min</div><div class="day-activity"><strong>Physical Warm-Up</strong><span>Arm/wrist stretches — prevent strain, improve proprioception</span></div><div class="day-time">body</div></div>
+              <div class="schedule-day"><div class="day-name">10–15m</div><div class="day-activity"><strong>Aim Calibration</strong><span>Gradually increasing difficulty — below target to slightly above. Bring mechanical system online, don't prove peak.</span></div><div class="day-time">aim</div></div>
+              <div class="schedule-day"><div class="day-name">5 min</div><div class="day-activity"><strong>Cognitive Warm-Up</strong><span>Review focus goals. Think through scenarios you'll practice.</span></div><div class="day-time">mind</div></div>
+              <div class="schedule-day"><div class="day-name">Opt</div><div class="day-activity"><strong>Low-Stakes Game</strong><span>Unrated/DM — complete system warm-up without rank consequence.</span></div><div class="day-time">play</div></div>
+            </div>
+          </div>
+
+          <h3 class="sub-title">The Growth Mindset Applied</h3>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>Most Powerful Shift</div>
+            <p>Your rank is your <strong>current level of practice</strong>, not your ceiling. Every Radiant player was once Iron.</p>
+          </div>
+          <ul>
+            <li><strong>Fixed mindset</strong>: blame teammates, refuse VOD, stagnate at "confirming" rank, comfort-pick</li>
+            <li><strong>Growth mindset</strong>: VOD your deaths, choose harder challenge, treat rank fluctuation as practice variance</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch93',
+        num: 'Chapter 9.3',
+        title: 'Focus & Attention',
+        body: `
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path></svg>Cognitive Load</div>
+            <p>A Valorant round requires simultaneous processing of: visual info, audio info, communication, ability timing, positioning, and decisions about all of these. Research suggests <strong>working memory holds ≈ 4 ± 1 items</strong> simultaneously — every additional task beyond capacity degrades performance on existing tasks.</p>
+          </div>
+
+          <h3 class="sub-title">Implications for Practice</h3>
+          <p><strong>Tilt degrades performance</strong> because negative emotional processing consumes working memory slots otherwise used for game info. <strong>Low-rank communication failures</strong> happen because "what to say and when" overloads already-stressed systems.</p>
+
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Why Fundamentals Matter</div>
+            <p>This is why fundamental mechanics training <strong>ultimately improves strategic play</strong> — not by making you a better shooter, but by reducing cognitive cost of shooting and freeing mental resources for decision-making.</p>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'X',
+    id: 'vol-x',
+    kicker: 'Volume X',
+    title: 'Ranked Systems',
+    overview: 'Rank climbing is a specific sub-game requiring understanding the ranked system, managing variance intelligently, and designing your play for consistent point accumulation rather than peak performance.',
+    chapters: [
+      {
+        id: 'ch101',
+        num: 'Chapter 10.1',
+        title: 'The Psychology of',
+        titleAccent: 'Rank Climbing',
+        body: `
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path></svg>Critical Split</div>
+            <p><strong>Rank climbing ≠ skill development</strong>. Climbing = optimizing for consistent wins at current level. Development = targeting skills that make you better at higher level. These can conflict.</p>
+          </div>
+          <p>Don't optimize for climbing at expense of development in skill range you want to plateau. If you want Immortal — optimize for Immortal-level skills even while playing Platinum.</p>
+
+          <h3 class="sub-title">Variance Management for Climbing</h3>
+          <p>Minimizing variance is <strong>more important than maximizing skill</strong>. A 55% consistent winrate climbs faster than 65% in streaks/40% in losing streaks — losing streaks create psychological damage and compound negative variance.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Variance Reducer</div><div class="title">Play Best Maps</div><div class="desc">Use map preferences strategically — don't random-queue hated maps in competitive.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">Variance Reducer</div><div class="title">Play Best Agents</div><div class="desc">Climb advice ≠ development advice — play strongest agent when climbing matters.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">Variance Reducer</div><div class="title">Play Best Times</div><div class="desc">Track what time/day you win most. Varies individually but often consistent. Play peak hours.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">Variance Reducer</div><div class="title">Short Sessions</div><div class="desc">Decision quality degrades long sessions. Two 2–3 game sessions &gt; one 8-game session.</div></div></li>
+            <li class="num-card"><div class="num">5</div><div><div class="label">Variance Reducer</div><div class="title">Stop After Two Losses</div><div class="desc">Loss aversion research: consecutive losses create objective degradation and subjective distortions. Stop before third.</div></div></li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch102',
+        num: 'Chapter 10.2',
+        title: 'Role-Based',
+        titleAccent: 'Climbing Strategies',
+        body: `
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-name">Duelist Climb</div><div class="rank-issue">High-Variance, High-Ceiling</div><div class="rank-desc">Focus on "net-positive trades" — winning first fight in team executes. Duelist getting first pick enables team to complete sites 4v3 — closer to guaranteed win than any other single play.</div></div>
+            <div class="rank-card"><div class="rank-name">Controller Climb</div><div class="rank-issue">Most Stable, Most Team-Dependent</div><div class="rank-desc">Smokes/utility consistently enable duelist to win first fight. Track "smoke enables" — how many rounds did utility directly facilitate teammate kill? That's your real metric.</div></div>
+            <div class="rank-card"><div class="rank-name">Sentinel Climb</div><div class="rank-issue">Most Consistent</div><div class="rank-desc">Flank protection efficiency — every prevented flank death = round playing 5v5 vs 5v4. Contribution quantifiable and doesn't require mechanical superiority.</div></div>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'XI',
+    id: 'vol-xi',
+    kicker: 'Volume XI',
+    title: 'Team Play',
+    overview: 'Individual skill has hard limits; team coordination has no ceiling. High-level Valorant is a team game.',
+    chapters: [
+      {
+        id: 'ch111',
+        num: 'Chapter 11.1',
+        title: 'Communication Principles',
+        body: `
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">①</div><div><div class="label">Type</div><div class="title">Positional Communication</div><div class="desc">"One A main, holding long." Enemy position, your position, teammate position. The foundation — without this, tactical coordination is guesswork.</div></div></li>
+            <li class="num-card"><div class="num">②</div><div><div class="label">Type</div><div class="title">Intentional Communication</div><div class="desc">"I'm smoking B market and fake — hold." What you plan to do. Enables timing/position coordination.</div></div></li>
+            <li class="num-card"><div class="num">③</div><div><div class="label">Type · Rarest Below Diamond</div><div class="title">Adaptive Communication</div><div class="desc">"Stacked A every round — switch to B." Pattern recognition + strategic adjustment communicated. Highest value type.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Communication Efficiency</h3>
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg></div><div class="ic-title">Brevity</div><div class="ic-desc">"Two B short" — not "I think there might be two B short".</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><div class="ic-title">Accuracy</div><div class="ic-desc">Direction, number, health when possible. "One A main, low" &gt; "someone A".</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="ic-title">Timing</div><div class="ic-desc">Callouts during gunfights often too late. Callout immediately after gaining info — before enemy reacts.</div></div>
+          </div>
+
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Solo-Queue Standard</div>
+            <p>Even if team gives nothing — <strong>consistently: call kills, call deaths</strong> ("died A main, one entry"), call cooldowns ("ult in two kills"), call gathered info. Sets info quality floor.</p>
+          </div>
+        `
+      },
+      {
+        id: 'ch112',
+        num: 'Chapter 11.2',
+        title: 'IGL Fundamentals',
+        body: `
+          <p>An IGL (In-Game Leader) in solo queue isn't formal — it's a function. Any player filling it consistently makes team perform better than team without.</p>
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>Most Important IGL Functions</div>
+            <p><strong>Call economy</strong> (buy/save/force) · <strong>Identify when pattern has repeated</strong> enough to exploit · <strong>Call half-time adjustments</strong> based on first half learning.</p>
+          </div>
+          <h3 class="sub-title">Shot-Calling Tone</h3>
+          <ul>
+            <li><strong>Confident, not arrogant</strong> — conviction, not demand</li>
+            <li><strong>Brief</strong> — one sentence per call. "Default B, flex A on info."</li>
+            <li><strong>Non-critical of individuals</strong> — never call out for errors, only call next-action corrections</li>
+            <li><strong>Adaptive</strong> — if plan fails twice, change. Repeating failures loses confidence rapidly</li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'XII',
+    id: 'vol-xii',
+    kicker: 'Volume XII',
+    title: 'Iron → Radiant Curriculum',
+    overview: 'Rank-specific improvement plans with precise priorities, readiness checks, and diagnostic criteria for each stage of the climb.',
+    chapters: [
+      {
+        id: 'ch121',
+        num: 'Chapter 12.1',
+        title: 'Iron & Bronze',
+        titleAccent: 'Building Foundation',
+        body: `
+          <p>The dominant failure at Iron/Bronze is <strong>mechanical inconsistency</strong>. All improvement energy goes to foundation before anything else.</p>
+          <h3 class="sub-title">Priorities</h3>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Iron</div><div class="title">Crosshair at Head Height</div><div class="desc">Walk every route of every map doing nothing but head-height placement. Nothing else matters until unconscious.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="label">Iron</div><div class="title">Stop Before Shooting</div><div class="desc">Brief, deliberate pause before every shot — directionally correct even before counter-strafe is refined.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="label">Iron</div><div class="title">Don't Hold the Trigger</div><div class="desc">At medium/long: fire one, assess, decide again. Reflexive trigger-hold produces random spray, teaches nothing.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="label">Bronze</div><div class="title">Basic Economy Awareness</div><div class="desc">Learn five states. Never solo-buy when saving. Call "save this round" — builds habit.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Iron → Bronze Readiness Check</h3>
+          <ul>
+            <li>Crosshair at head height &gt; 80% of time during rounds</li>
+            <li>Stop before at least 70% of shots</li>
+            <li>Positive KDA in at least half of recent games</li>
+            <li>Buying a gun in &gt; 90% of rounds</li>
+          </ul>
+
+          <h3 class="sub-title">Bronze → Silver Readiness Check</h3>
+          <ul>
+            <li>Know every callout on two most-played maps</li>
+            <li>Making ≥1 audio-based game state read per round</li>
+            <li>Coordinating economy buys in ≥ 80% of rounds</li>
+            <li>Consistently give position callouts on kills/deaths</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch122',
+        num: 'Chapter 12.2',
+        title: 'Silver',
+        titleAccent: 'Defeating Info Neglect',
+        body: `
+          <p>Silver: mechanics sufficient for duels, but rounds lost because sound/minimap/comm info isn't used to inform positioning.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="title">Active Audio Processing</div><div class="desc">Pause mentally every 20 seconds: "What do I hear? What does it mean?"</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="title">Minimap Discipline</div><div class="desc">Check every 10–15 seconds. Mark where teammates are and infer where enemies are NOT.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="title">Counter-Strafe Technique</div><div class="desc">Mechanical ceiling at Silver — must become automatic.</div></div></li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch123',
+        num: 'Chapter 12.3',
+        title: 'Gold',
+        titleAccent: 'Mastering Fight Selection',
+        body: `
+          <p>Gold: mechanics and basic info — but cannot consistently identify which fights to take.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="title">Apply Position Priority Hierarchy</div><div class="desc">Before every fight: is info position available? Delay? Only default to contest when others not possible.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="title">Expected Value Framing</div><div class="desc">Post-game, identify one negative-EV fight. Why took it? What was correct decision?</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="title">Utility Discipline Introduction</div><div class="desc">Rule: never use combat utility without confirmed enemy information.</div></div></li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch124',
+        num: 'Chapter 12.4',
+        title: 'Platinum',
+        titleAccent: 'Utility Mastery',
+        body: `
+          <p>Platinum: can fight and use info — but wastes abilities, uses reactively, doesn't understand strategic kit value.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="title">Agent-Specific Depth</div><div class="desc">Sova: commit to 5 lineups/site/map. KJ: 5 non-textbook setups. Commit to primary agent's full kit value.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="title">Utility Pacing</div><div class="desc">Info utility early · space control mid · combat only at fight moment. Track pre-confirmed combat utility uses.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="title">Execute Coordination</div><div class="desc">Confirm utility timing verbally before executes. "Smoking CT on contact, flash in 3 seconds."</div></div></li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch125',
+        num: 'Chapter 12.5',
+        title: 'Diamond',
+        titleAccent: 'Consistency & Refinement',
+        body: `
+          <p>Diamond players can play at Immortal in best rounds. Problem: <strong>tilt, inconsistency, failure to apply knowledge under pressure.</strong></p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="title">Mental Game Focus</div><div class="desc">Implement Vol IX protocols: tilt management, pre-game routine, stop condition. Track winrate by time/day.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="title">Micro-Positioning</div><div class="desc">VOD review every death for finest-grain errors: one step too forward, angle too wide, no wall usage.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="title">Utility Timing Precision</div><div class="desc">Right utility ≠ right timing. Practice until execution within 0.2 seconds of optimal.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="title">Communication Leadership</div><div class="desc">Consistent economy/pattern/adaptation calls create structural advantage that compounds.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Diamond → Ascendant Readiness</h3>
+          <ul>
+            <li>Performance variance between sessions significantly decreased</li>
+            <li>VOD sessions show fewer repeating micro-positioning errors</li>
+            <li>Utility timing precise and consistent in execution</li>
+            <li>Shot-calling at Platinum-level or above in most matches</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch126',
+        num: 'Chapter 12.6',
+        title: 'Ascendant',
+        titleAccent: 'Pressure Testing',
+        body: `
+          <p>Skill gap to lobby smallest here. Everyone has mechanics/utility/sense. Difference: <strong>who performs under pressure</strong>. Ascendant trap: practice perfectly, crumble in high-stakes moments — round 12, clutches, late OT.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="title">Clutch Situation Practice</div><div class="desc">1vX scenarios in customs until Vol III checklist is automatic reflex.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="title">Adaptation Speed</div><div class="desc">Opponent patterns change faster and more intentionally at Ascendant. Window to adapt is shorter — analyze earlier and more aggressively.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="title">Mechanical Peak Maintenance</div><div class="desc">Mechanics need peak consistency — any decline under pressure is punishable here. Focused DM before sessions.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">Ascendant → Immortal Readiness</h3>
+          <ul>
+            <li>Clutch win rate above 20% (average for rank)</li>
+            <li>Adapt strategy within first 4 rounds of each half</li>
+            <li>Mechanical performance under pressure within 10% of practice performance</li>
+            <li>VOD self-review produces specific actionable errors in every session</li>
+          </ul>
+        `
+      },
+      {
+        id: 'ch127',
+        num: 'Chapter 12.7',
+        title: 'Immortal & Radiant',
+        titleAccent: 'The Summit',
+        body: `
+          <div class="callout callout-insight">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line></svg>The Gap</div>
+            <p>Immortal is top 1–3%. Gap to Radiant is one of largest in game — not because Radiant mechanics are dramatically better, but because <strong>Radiant represents systemic mastery</strong>: consistency and competitive refinement requiring sustained professional commitment.</p>
+          </div>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">1</div><div><div class="label">Commitment: 3–5 hrs/week</div><div class="title">Full VOD with Radiant Rubric</div><div class="desc">Every session reviewed. Every sub-4 score produces targeted protocol.</div></div></li>
+            <li class="num-card"><div class="num">2</div><div><div class="title">Agent Mastery — Highest Level</div><div class="desc">Every lineup, utility combination, counter-play rotation — known and consistently executed on primary.</div></div></li>
+            <li class="num-card"><div class="num">3</div><div><div class="title">Map-Level Strategic Mastery</div><div class="desc">Nuanced match-specific strategy for every map — not generic, accounting for meta and composition.</div></div></li>
+            <li class="num-card"><div class="num">4</div><div><div class="title">Learn from Radiant Players</div><div class="desc">Study Radiant VODs — pro streams, tournament recordings. Identify decisions you wouldn't make and understand why they were correct.</div></div></li>
+          </ul>
+
+          <h3 class="sub-title">The Radiant Standard</h3>
+          <div class="callout callout-drill">
+            <div class="callout-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Top 500/Region</div>
+            <p>Top 0.1–0.2% of playerbase. Requires: near-perfect mechanical consistency · complete utility mastery · deep map knowledge · sophisticated strategy · excellent communication · exceptional mental performance. Path: not one dramatic improvement — <strong>thousands of small ones, each correct, sustained over months of deliberate practice.</strong></p>
+          </div>
+        `
+      },
+      {
+        id: 'ch128',
+        num: 'Chapter 12.8',
+        title: 'The Coaching Constraints',
+        titleAccent: 'Protocol',
+        body: `
+          <p>These constraints apply to any coaching conversation, self-review, or mentoring interaction under this framework.</p>
+          <ul class="numbered-list">
+            <li class="num-card"><div class="num">C1</div><div><div class="label">Constraint</div><div class="title">Never More Than 3 Priorities</div><div class="desc">More than three simultaneous improvement targets produces diluted attention and slow progress. Address highest-ROI weakness fully first.</div></div></li>
+            <li class="num-card"><div class="num">C2</div><div><div class="label">Constraint</div><div class="title">Identify Highest-ROI Weakness First</div><div class="desc">The weakness that most significantly increases round-win rate at current rank — determined by rank-specific skill gap model (Ch. 1.3).</div></div></li>
+            <li class="num-card"><div class="num">C3</div><div><div class="label">Constraint</div><div class="title">Always Separate Mistake Types</div><div class="desc">Mechanical ≠ tactical ≠ strategic ≠ mental. Conflating produces wrong prescriptions.</div></div></li>
+            <li class="num-card"><div class="num">C4</div><div><div class="label">Constraint</div><div class="title">One Specific Drill Per Mistake</div><div class="desc">Identifying without correction is incomplete coaching. Pair every error with drill, routine, or protocol.</div></div></li>
+            <li class="num-card"><div class="num">C5</div><div><div class="label">Constraint</div><div class="title">Set Re-Evaluation Timeline</div><div class="desc">Every coaching interaction ends with: "Review this target in X sessions and assess." Insights without follow-up produce one-time learning, not sustained improvement.</div></div></li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'A',
+    id: 'app-a',
+    kicker: 'Appendix A',
+    title: 'Research Methodology',
+    chapters: [
+      {
+        id: 'appA',
+        num: 'Appendix',
+        title: 'How to Evaluate',
+        titleAccent: 'Valorant Information',
+        body: `
+          <p>Evaluate advice against five quality axes. High scores on all five = extremely high-confidence. One axis only = treat with skepticism.</p>
+          <div class="icon-cards">
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 8 22 9 17 14 18 21 12 18 6 21 7 14 2 9 9 8 12 2"></polygon></svg></div><div class="ic-title">Professional Play</div><div class="ic-desc">Do the best players consistently execute this? Highest-quality signal — but may not transfer below due to skill ceilings.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div><div class="ic-title">Ranked Evidence</div><div class="ic-desc">Do players who execute in ranked perform better? Statistical tracker analysis — more relevant to most readers than pro play alone.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div class="ic-title">Coaching Consensus</div><div class="ic-desc">Do high-level coaches agree? Multiple independent expert agreement substantially raises confidence.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 12h8M12 8v8"></path></svg></div><div class="ic-title">Statistical Evidence</div><div class="ic-desc">Does data support? ACS, KAST, first blood rate, clutch win rate — these validate or contradict intuitive claims.</div></div>
+            <div class="icon-card"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="ic-title">Patch Impact</div><div class="ic-desc">True in previous patches? Meta shifts. Always date-check — info correct Ep. 7 may be outdated Ep. 9.</div></div>
+          </div>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'B',
+    id: 'app-b',
+    kicker: 'Appendix B',
+    title: 'Weekly Practice Template',
+    chapters: [
+      {
+        id: 'appB',
+        num: 'Appendix',
+        title: 'Deliberate Practice',
+        titleAccent: 'Standard Week',
+        body: `
+          <div class="schedule">
+            <div class="schedule-head"><strong>Standard Week Template</strong><span>≈ 10 hrs/week</span></div>
+            <div class="schedule-body">
+              <div class="schedule-day"><div class="day-name">Mon</div><div class="day-activity"><strong>Aim training + Ranked</strong><span>Weakest sub-skill from VOD · Single practice target</span></div><div class="day-time">110m</div></div>
+              <div class="schedule-day"><div class="day-name">Tue</div><div class="day-activity"><strong>Concept Study + Ranked</strong><span>Current rank priority volume · Same target</span></div><div class="day-time">120m</div></div>
+              <div class="schedule-day"><div class="day-name">Wed</div><div class="day-activity"><strong>Rest Day</strong><span>No ranked play — active recovery and motor consolidation</span></div><div class="day-time">0m</div></div>
+              <div class="schedule-day"><div class="day-name">Thu</div><div class="day-activity"><strong>Aim training + Ranked</strong><span>Continue weakest sub-skill · Target with minor expansion</span></div><div class="day-time">110m</div></div>
+              <div class="schedule-day"><div class="day-name">Fri</div><div class="day-activity"><strong>VOD Review</strong><span>Review Tue/Thu sessions</span></div><div class="day-time">60m</div></div>
+              <div class="schedule-day"><div class="day-name">Sat</div><div class="day-activity"><strong>Ranked</strong><span>Implement VOD corrections</span></div><div class="day-time">90m</div></div>
+              <div class="schedule-day"><div class="day-name">Sun</div><div class="day-activity"><strong>Weekly Review</strong><span>Score progress · Set next week target</span></div><div class="day-time">30m</div></div>
+            </div>
+          </div>
+
+          <h3 class="sub-title">Principles for Adapting</h3>
+          <ul>
+            <li>Do not play ranked more than <strong>3–4 sessions per week</strong> if each session exceeds 2 hours</li>
+            <li>Always VOD review within <strong>48 hours of session</strong> — memory of decisions fades quickly</li>
+            <li><strong>The rest day is not optional</strong> — active recovery and sleep consolidate motor learning</li>
+            <li>Adjust targets weekly based on VOD findings — <strong>not on rank changes</strong></li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  {
+    vol: 'C',
+    id: 'app-c',
+    kicker: 'Appendix C',
+    title: 'Glossary',
+    chapters: [
+      {
+        id: 'appC',
+        num: 'Appendix',
+        title: 'Terminology',
+        body: `
+          <div class="glossary">
+            <div class="gloss-term"><div class="gloss-word">ACS</div><div class="gloss-def">Average Combat Score — primary individual performance metric from damage/kills/assists/multis</div></div>
+            <div class="gloss-term"><div class="gloss-word">Anchor</div><div class="gloss-def">Player holding site while teammates rotate — also used as verb</div></div>
+            <div class="gloss-term"><div class="gloss-word">Clutch</div><div class="gloss-def">Round with one alive vs. numerical disadvantage with round still winnable</div></div>
+            <div class="gloss-term"><div class="gloss-word">Default</div><div class="gloss-def">Attack without committed target — info-gathering round</div></div>
+            <div class="gloss-term"><div class="gloss-word">eDPI</div><div class="gloss-def">Effective DPI = mouse DPI × in-game sense — universal sensitivity metric</div></div>
+            <div class="gloss-term"><div class="gloss-word">Economy</div><div class="gloss-def">Credit system — collective credits + spend decisions</div></div>
+            <div class="gloss-term"><div class="gloss-word">Execute</div><div class="gloss-def">Coordinated site attack using utility + numerical commitment</div></div>
+            <div class="gloss-term"><div class="gloss-word">First Blood</div><div class="gloss-def">First kill of round — highest-value individual event</div></div>
+            <div class="gloss-term"><div class="gloss-word">Force Buy</div><div class="gloss-def">Buy sub-full kit — accepting disadvantage to maintain pressure</div></div>
+            <div class="gloss-term"><div class="gloss-word">IGL</div><div class="gloss-def">In-Game Leader — calls economy/rotations/adjustments</div></div>
+            <div class="gloss-term"><div class="gloss-word">KAST</div><div class="gloss-def">Kills/Assists/Survived/Traded % — &gt;70% positive</div></div>
+            <div class="gloss-term"><div class="gloss-word">Lurker</div><div class="gloss-def">Independent attacker applying flank pressure and disrupting rotations</div></div>
+            <div class="gloss-term"><div class="gloss-word">MMR</div><div class="gloss-def">Match Making Rating — hidden value determining rank and RR changes</div></div>
+            <div class="gloss-term"><div class="gloss-word">Post-Plant</div><div class="gloss-def">Phase after spike planted — distinct strategies from pre-plant</div></div>
+            <div class="gloss-term"><div class="gloss-word">Recoil Pattern</div><div class="gloss-def">Deterministic spread path of autos during sustained fire — learnable</div></div>
+            <div class="gloss-term"><div class="gloss-word">RR</div><div class="gloss-def">Rank Rating — visible progress metric within tier</div></div>
+            <div class="gloss-term"><div class="gloss-word">Stack</div><div class="gloss-def">Three+ players concentrated on one site for hold/overwhelm</div></div>
+            <div class="gloss-term"><div class="gloss-word">Tilt</div><div class="gloss-def">Degraded performance from emotional interference — poor decisions + risk-taking</div></div>
+            <div class="gloss-term"><div class="gloss-word">Trade</div><div class="gloss-def">Kill-for-kill exchange — net-zero kills, net-negative position</div></div>
+            <div class="gloss-term"><div class="gloss-word">VOD</div><div class="gloss-def">Video on demand — recorded gameplay for review</div></div>
+          </div>
+        `
+      }
+    ]
+  }
+];
+
+/* ============================================
+   ICON SPRITE — reusable SVGs
+   ============================================ */
+const icons = {
+  chevronRight: `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`
+};
+
+/* ============================================
+   RENDER
+   ============================================ */
+function renderToc() {
+  const toc = document.getElementById('toc');
+  let html = '';
+
+  curriculum.forEach((vol) => {
+    html += `<div class="tree-volume" data-vol="${vol.id}">
+      <button class="tree-volume-btn" data-target="${vol.id}">
+        <span class="vol-label">Vol ${vol.vol}</span>
+        <span class="vol-name">${vol.title}</span>
+        ${icons.chevronRight}
+      </button>
+      <div class="tree-chapters">
+        ${vol.chapters.map(ch => `
+          <a href="#${ch.id}" class="tree-chapter" data-target="${ch.id}">
+            <span class="ch-num">${ch.num}</span>${ch.title}
+          </a>
+        `).join('')}
+      </div>
+    </div>`;
+  });
+
+  toc.innerHTML = html;
+
+  // Volume toggle
+  toc.querySelectorAll('.tree-volume-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.tree-volume');
+      const wasExpanded = parent.classList.contains('expanded');
+
+      // Collapse all first
+      toc.querySelectorAll('.tree-volume').forEach(v => v.classList.remove('expanded'));
+      toc.querySelectorAll('.tree-volume-btn').forEach(b => b.classList.remove('expanded'));
+
+      // Toggle this one
+      if (!wasExpanded) {
+        parent.classList.add('expanded');
+        btn.classList.add('expanded');
+
+        // Scroll target volume into view
+        setTimeout(() => {
+          document.getElementById(btn.dataset.target)?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 150);
+      }
+    });
+  });
+
+  // Chapter click
+  toc.querySelectorAll('.tree-chapter').forEach(ch => {
+    ch.addEventListener('click', () => {
+      // Ensure parent volume is expanded
+      const vol = ch.closest('.tree-volume');
+      if (!vol.classList.contains('expanded')) {
+        vol.classList.add('expanded');
+        vol.querySelector('.tree-volume-btn').classList.add('expanded');
+      }
+
+      toc.querySelectorAll('.tree-chapter').forEach(c => c.classList.remove('active'));
+      ch.classList.add('active');
+    });
+  });
+
+  // Auto-expand first volume
+  const firstVol = toc.querySelector('.tree-volume');
+  if (firstVol) {
+    firstVol.classList.add('expanded');
+    firstVol.querySelector('.tree-volume-btn').classList.add('expanded');
+  }
+}
+
+function renderContent() {
+  const content = document.getElementById('content');
+  let html = '';
+
+  curriculum.forEach(vol => {
+    html += `<section class="volume-section" id="${vol.id}" data-vol="${vol.id}">
+      <div class="volume-marker">
+        <div class="vol-num">${vol.vol}</div>
+        <div class="vol-meta">
+          <div class="vol-kicker">${vol.kicker}</div>
+          <h2 class="vol-title ${vol.id.startsWith('app-') ? 'appendix-title' : 'grad-text-warm'}">${vol.title}</h2>
+        </div>
+      </div>`;
+
+    if (vol.overview) {
+      html += `<div class="vol-overview">"${vol.overview}"</div>`;
+    }
+
+    vol.chapters.forEach(ch => {
+      html += `<article class="chapter" id="${ch.id}" data-chapter="${ch.id}">
+        <div class="chapter-marker">
+          <span class="ch-number">${ch.num}</span>
+          <h2 class="ch-title">${ch.title}${ch.titleAccent ? ` <span class="italic grad-text">${ch.titleAccent}</span>` : ''}</h2>
+        </div>
+        ${ch.body}
+      </article>`;
+    });
+
+    html += `</section>`;
+  });
+
+  content.innerHTML = html;
+}
+
+renderToc();
+renderContent();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {
+      // Ignore service-worker registration failures in local or restricted contexts.
+    });
+  });
+}
+
+/* ============================================
+   READING PROGRESS
+   ============================================ */
+function updateProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+/* ============================================
+   SCROLL-BASED: topbar hide/show, fab show/hide
+   ============================================ */
+let lastScroll = 0;
+let ticking = false;
+
+function handleScroll() {
+  updateProgress();
+
+  const currentScroll = window.scrollY;
+  const topbar = document.getElementById('topbar');
+
+  // Topbar hide on scroll down past threshold
+  if (currentScroll > 300 && currentScroll > lastScroll) {
+    topbar.classList.add('scrolled');
+    // topbar.classList.add('hidden');
+  } else {
+    // topbar.classList.remove('hidden');
+  }
+
+  // Back-to-top fab
+  const fabTop = document.getElementById('fabTop');
+  if (currentScroll > 500) {
+    fabTop.classList.remove('hidden');
+  } else {
+    fabTop.classList.add('hidden');
+  }
+
+  lastScroll = currentScroll;
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(handleScroll);
+    ticking = true;
+  }
+}, { passive: true });
+
+/* ============================================
+   INTERSECTION OBSERVER — fade-in and active tracking
+   ============================================ */
+const volumeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -100px 0px' });
+
+document.querySelectorAll('.volume-section').forEach(el => volumeObserver.observe(el));
+
+const chapterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+
+      // Update TOC
+      document.querySelectorAll('.tree-chapter').forEach(ch => {
+        ch.classList.toggle('active', ch.dataset.target === id);
+      });
+
+      // Ensure parent volume is expanded
+      const parentVol = document.querySelector(`.tree-chapter[data-target="${id}"]`)?.closest('.tree-volume');
+      if (parentVol && !parentVol.classList.contains('expanded')) {
+        document.querySelectorAll('.tree-volume').forEach(v => {
+          v.classList.remove('expanded');
+          v.querySelector('.tree-volume-btn').classList.remove('expanded');
+        });
+        parentVol.classList.add('expanded');
+        parentVol.querySelector('.tree-volume-btn').classList.add('expanded');
+
+        // Scroll the active chapter link into view in the sidebar
+        const activeChapter = parentVol.querySelector('.tree-chapter.active');
+        if (activeChapter) {
+          activeChapter.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }
+
+      // Update page title for better tab UX
+      const chTitle = document.querySelector(`#${id} .ch-title`)?.textContent || '';
+      if (chTitle) {
+        document.title = `${chTitle.trim()} · Valorant Encyclopedia`;
+      }
+    }
+  });
+}, { threshold: 0, rootMargin: '-40% 0px -50% 0px' });
+
+document.querySelectorAll('.chapter').forEach(el => chapterObserver.observe(el));
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+document.getElementById('fabTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ============================================
+   SEARCH
+   ============================================ */
+const searchOverlay = document.getElementById('searchOverlay');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+function openSearch() {
+  searchOverlay.classList.add('open');
+  setTimeout(() => searchInput.focus(), 100);
+}
+
+function closeSearch() {
+  searchOverlay.classList.remove('open');
+  searchInput.value = '';
+  searchResults.innerHTML = `<div class="search-results-empty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <div>Type to search the curriculum</div>
+  </div>`;
+  searchInput.blur();
+}
+
+function searchCurriculum(query) {
+  if (!query || query.trim().length < 2) {
+    searchResults.innerHTML = `<div class="search-results-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <div>Type at least 2 characters</div>
+    </div>`;
+    return;
+  }
+
+  const q = query.trim().toLowerCase();
+  const results = [];
+
+  curriculum.forEach(vol => {
+    vol.chapters.forEach(ch => {
+      // Strip HTML for matching
+      const plainBody = ch.body.replace(/<[^>]+>/g, ' ');
+      const plainTitle = (ch.title + ' ' + (ch.titleAccent || '')).toLowerCase();
+
+      let score = 0;
+      let context = '';
+
+      if (plainTitle.includes(q)) {
+        score = 100;
+        context = `In ${vol.kicker} — ${vol.title}`;
+      } else {
+        const idx = plainBody.toLowerCase().indexOf(q);
+        if (idx > -1) {
+          score = 50;
+          const start = Math.max(0, idx - 50);
+          const end = Math.min(plainBody.length, idx + q.length + 80);
+          const snippet = plainBody.slice(start, end).replace(/\s+/g, ' ');
+          const highlighted = snippet.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<mark>$1</mark>');
+          context = (start > 0 ? '...' : '') + highlighted + (end < plainBody.length ? '...' : '');
+        }
+      }
+
+      if (score > 0) {
+        results.push({ score, vol, ch, context });
+      }
+    });
+  });
+
+  results.sort((a, b) => b.score - a.score);
+
+  if (results.length === 0) {
+    searchResults.innerHTML = `<div class="search-results-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <div>No results for "<strong style="color: var(--text-0)">${query}</strong>"</div>
+    </div>`;
+    return;
+  }
+
+  searchResults.innerHTML = results.slice(0, 15).map((r, i) => `
+    <div class="search-result ${i === 0 ? 'selected' : ''}" data-target="${r.ch.id}">
+      <div class="search-result-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
+        ${r.ch.num} — ${r.ch.title}${r.ch.titleAccent ? ' ' + r.ch.titleAccent : ''}
+      </div>
+      <div class="search-result-context">${r.context}</div>
+    </div>
+  `).join('');
+
+  searchResults.querySelectorAll('.search-result').forEach(el => {
+    el.addEventListener('click', () => {
+      const target = document.getElementById(el.dataset.target);
+      if (target) {
+        closeSearch();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Flash highlight
+        setTimeout(() => {
+          target.style.transition = 'background 0.6s ease, box-shadow 0.6s ease';
+          target.style.background = 'rgba(168, 85, 247, 0.08)';
+          target.style.boxShadow = '0 0 0 1px var(--p-700) inset';
+          target.style.borderRadius = 'var(--radius-md)';
+          target.style.margin = '-10px';
+          target.style.padding = '10px';
+
+          setTimeout(() => {
+            target.style.background = 'transparent';
+            target.style.boxShadow = 'none';
+          }, 1800);
+
+          setTimeout(() => {
+            target.style.transition = '';
+            target.style.margin = '';
+            target.style.padding = '';
+          }, 2500);
+        }, 600);
+      }
+    });
+  });
+}
+
+document.getElementById('searchBtn').addEventListener('click', openSearch);
+
+searchInput.addEventListener('input', (e) => {
+  searchCurriculum(e.target.value);
+});
+
+searchOverlay.addEventListener('click', (e) => {
+  if (e.target === searchOverlay) closeSearch();
+});
+
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeSearch();
+  } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    const results = Array.from(searchResults.querySelectorAll('.search-result'));
+    if (results.length === 0) return;
+
+    const current = searchResults.querySelector('.search-result.selected');
+    let idx = results.indexOf(current);
+    if (e.key === 'ArrowDown') {
+      idx = (idx + 1) % results.length;
+    } else {
+      idx = (idx - 1 + results.length) % results.length;
+    }
+
+    results.forEach(r => r.classList.remove('selected'));
+    results[idx].classList.add('selected');
+    results[idx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter') {
+    const selected = searchResults.querySelector('.search-result.selected');
+    if (selected) selected.click();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    if (searchOverlay.classList.contains('open')) closeSearch();
+    else openSearch();
+  }
+  if (e.key === 'Escape' && searchOverlay.classList.contains('open')) {
+    closeSearch();
+  }
+});
+
+/* ============================================
+   TOC SEARCH
+   ============================================ */
+const tocSearch = document.getElementById('tocSearch');
+tocSearch.addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.tree-volume').forEach(vol => {
+    const chapters = Array.from(vol.querySelectorAll('.tree-chapter'));
+    const volBtn = vol.querySelector('.tree-volume-btn');
+    const volText = (volBtn.textContent + ' ' + chapters.map(c => c.textContent).join(' ')).toLowerCase();
+
+    if (!q) {
+      vol.style.display = '';
+      chapters.forEach(ch => {
+        ch.style.display = '';
+        ch.innerHTML = `<span class="ch-num">${ch.querySelector('.ch-num')?.textContent || ''}</span>${ch.dataset.origText || ch.textContent.replace(ch.querySelector('.ch-num')?.textContent || '', '').trim()}`;
+      });
+      return;
+    }
+
+    // Save original text
+    chapters.forEach(ch => {
+      if (!ch.dataset.origText) {
+        ch.dataset.origText = ch.textContent.replace(ch.querySelector('.ch-num')?.textContent || '', '').trim();
+      }
+    });
+
+    if (volText.includes(q)) {
+      vol.style.display = '';
+
+      let anyChapterMatch = false;
+      chapters.forEach(ch => {
+        const text = ch.dataset.origText || '';
+        if (text.toLowerCase().includes(q) || ch.querySelector('.ch-num')?.textContent.toLowerCase().includes(q)) {
+          ch.style.display = '';
+          anyChapterMatch = true;
+          // Highlight
+          const regex = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+          const chNum = ch.querySelector('.ch-num')?.textContent || '';
+          ch.innerHTML = `<span class="ch-num">${chNum}</span>${text.replace(regex, '<mark style="background: var(--p-800); color: var(--p-100); padding: 0 3px; border-radius: 3px;">$1</mark>')}`;
+        } else {
+          ch.style.display = 'none';
+        }
+      });
+
+      if (anyChapterMatch) {
+        vol.classList.add('expanded');
+        volBtn.classList.add('expanded');
+      } else {
+        vol.style.display = 'none';
+      }
+    } else {
+      vol.style.display = 'none';
+    }
+  });
+});
+
+/* ============================================
+   SMOOTH ANCHORS — intercept and scroll with offset
+   ============================================ */
+document.addEventListener('click', (e) => {
+  const anchor = e.target.closest('a[href^="#"]');
+  if (anchor) {
+    const targetId = anchor.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, null, `#${targetId}`);
+    }
+  }
+});
+
+/* ============================================
+   INITIAL: scroll to hash if present
+   ============================================ */
+if (window.location.hash) {
+  const target = document.querySelector(window.location.hash);
+  if (target) {
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 500);
+  }
+}
+
+updateProgress();
+
+/* ============================================
+   MOBILE MENU LOGIC
+   ============================================ */
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const menuBtn = document.getElementById('menuBtn');
+const openTocBtn = document.getElementById('openTocBtn');
+
+function toggleMobileMenu() {
+  sidebar.classList.toggle('open');
+  sidebarOverlay.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
+}
+
+if (menuBtn) menuBtn.addEventListener('click', toggleMobileMenu);
+if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleMobileMenu);
+
+if (openTocBtn) {
+  openTocBtn.addEventListener('click', (e) => {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      toggleMobileMenu();
+    }
+  });
+}
+
+// Close mobile menu when a chapter is clicked
+document.querySelectorAll('.tree-chapter').forEach(ch => {
+  ch.addEventListener('click', () => {
+    if (window.innerWidth <= 1024 && sidebar.classList.contains('open')) {
+      toggleMobileMenu();
+    }
+  });
+});
+
+/* ============================================
+   LOADER LOGIC
+   ============================================ */
+window.addEventListener('load', () => {
+  // Wait for all assets (fonts, DOM) to load, plus a minimum 1.5s 
+  // so the progress bar animation finishes smoothly and it doesn't just flash
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+      loader.classList.add('hidden');
+      // Remove from DOM after fade-out to free up memory in the APK WebView
+      setTimeout(() => { if(loader.parentNode) loader.remove(); }, 800);
+    }
+  }, 1500); 
+});
+</script>
+
+</body>
+</html>
